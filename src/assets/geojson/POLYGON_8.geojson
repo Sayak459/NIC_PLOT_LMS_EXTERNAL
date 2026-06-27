@@ -1,0 +1,14 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[88.317638022691,22.542145737098],[88.3176039822153,22.5420859127822],[88.3177124508164,22.5420267670564],[88.317748374001,22.5420855647601],[88.317638022691,22.542145737098]]]},"properties": {
+    "floor": "ground","fill-opacity":0,"stroke-opacity":1,"stroke":"#ff0000","ID":"8-5","REMARKS":"POLYGON ID-8"}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[88.3176039822153,22.5420859127822],[88.31756994177,22.5420260884573],[88.3176765276631,22.5419679693429],[88.3177124508164,22.5420267670564],[88.3176039822153,22.5420859127822]]]},"properties": {
+    "floor": "ground","fill-opacity":0,"stroke-opacity":1,"stroke":"#ff0000","ID":"8-6","REMARKS":"POLYGON ID-8"}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[88.3177061037334,22.5422653857024],[88.317672063197,22.5422055614047],[88.3177842972171,22.5421443624538],[88.3178202204645,22.5422031601376],[88.3177061037334,22.5422653857024]]]},"properties": {
+    "floor": "ground","fill-opacity":0,"stroke-opacity":1,"stroke":"#ff0000","ID":"8-3","REMARKS":"POLYGON ID-8"}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[88.317672063197,22.5422055614047],[88.317638022691,22.542145737098],[88.317748374001,22.5420855647601],[88.3177842972171,22.5421443624538],[88.317672063197,22.5422055614047]]]},"properties": {
+    "floor": "ground","fill-opacity":0,"stroke-opacity":1,"stroke":"#ff0000","ID":"8-4","REMARKS":"POLYGON ID-8"}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[88.3178561437433,22.5422619578116],[88.3179003687487,22.5423343433096],[88.3177741848974,22.5423850342707],[88.3177401443002,22.542325209991],[88.3178561437433,22.5422619578116]]]},"properties": {
+    "floor": "ground","fill-opacity":0,"stroke-opacity":1,"stroke":"#ff0000","ID":"8-1","REMARKS":"POLYGON ID-8"}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[88.3177401443002,22.542325209991],[88.3177061037334,22.5422653857024],[88.3178202204645,22.5422031601376],[88.3178561437433,22.5422619578116],[88.3177401443002,22.542325209991]]]},"properties": {
+    "floor": "ground","fill-opacity":0,"stroke-opacity":1,"stroke":"#ff0000","ID":"8-2","REMARKS":"POLYGON ID-8"}}
+]}

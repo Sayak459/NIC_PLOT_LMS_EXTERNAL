@@ -1,0 +1,178 @@
+<button class="btn-back" (click)="goBack()">
+  <i class="bi bi-arrow-left"></i>
+  <span>Back</span>
+</button>
+
+<div class="container-fluid p-3 dashboard-table-wrap">
+  <!-- Centered heading -->
+  <div class="card shadow-sm header text-center mb-3">
+    <h5 class="text-center fw-bold text-primary mb-0">
+      Archived Plot Applications
+    </h5>
+  </div>
+
+  <!-- Loading -->
+  <div *ngIf="loading" class="text-center py-5">
+    <div class="spinner-border text-primary" role="status"></div>
+    <p class="mt-2">Loading archived applications...</p>
+  </div>
+  <!-- 🔍 Global Search -->
+  <div class="row mb-2">
+    <div class="col-md-6 d-flex align-items-center">
+      <!-- Download Dropdown -->
+      <div class="d-flex align-items-center mb-2 download-section">
+        <!-- Download Label -->
+        <div class="me-2 card" style="background-color: rgb(255, 255, 255)">
+          <span class="fw-bold me-2">Download:</span>
+        </div>
+        <!-- CSV Button -->
+        <button
+          class="btn btn-primary btn-icon-sm me-1"
+          (click)="downloadCSV()"
+          title="Download CSV"
+        >
+          <i class="bi bi-file-earmark-text-fill"></i>
+        </button>
+
+        <!-- Excel Button -->
+        <button
+          class="btn btn-success btn-icon-sm me-1"
+          (click)="downloadExcel()"
+          title="Download Excel"
+        >
+          <i class="bi bi-file-earmark-spreadsheet-fill"></i>
+        </button>
+
+        <!-- PDF Button -->
+        <button
+          class="btn btn-danger btn-icon-sm"
+          (click)="downloadPDF()"
+          title="Download PDF"
+        >
+          <i class="bi bi-file-earmark-pdf-fill"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="col-md-6 d-flex justify-content-end">
+      <div class="position-relative" style="width: 250px">
+        <div class="input-icon-select">
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            placeholder="🔍 Search anything..."
+            [(ngModel)]="globalSearch"
+            (input)="filterTable()"
+          />
+          <button
+            *ngIf="globalSearch"
+            type="button"
+            class="btn btn-sm btn-link position-absolute top-0 end-0 mt-1 me-2 p-0 text-muted"
+            (click)="clearSearch()"
+            title="Clear Search"
+          >
+            &times;
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Table area -->
+  <div
+    *ngIf="!loading && archivedApplications.length > 0"
+    class="table-area shadow-sm rounded"
+  >
+    <table class="table table-bordered table-hover align-middle mb-0">
+      <thead class="table-secondary text-center sticky-top">
+        <tr>
+          <th (click)="sortTable('appNo')" class="sortable">Application No.</th>
+          <th (click)="sortTable('spaceAllocNo')" class="sortable">SAN</th>
+          <th (click)="sortTable('vcn')" class="sortable">VCN</th>
+          <th (click)="sortTable('purposeCd')" class="sortable">Purpose</th>
+          <th (click)="sortTable('shedYardName')" class="sortable">
+            Shed/Yard
+          </th>
+          <th (click)="sortTable('totAllotArea')" class="sortable">
+            Applied Area (SqM)
+          </th>
+          <!-- <th (click)="sortTable('actAllotArea')" class="sortable">
+            Current Area (SqM)
+          </th> -->
+          <th (click)="sortTable('fromDt')" class="sortable">From Date</th>
+          <th (click)="sortTable('toDt')" class="sortable">Upto Date</th>
+          <th (click)="sortTable('allotDt')" class="sortable">Allot Date</th>
+          <th (click)="sortTable('transMode')" class="sortable">
+            Transport Mode
+          </th>
+          <th (click)="sortTable('cargoType')" class="sortable">Cargo Type</th>
+          <th (click)="sortTable('handoverDt')" class="sortable">
+            Handover Date
+          </th>
+          <!-- <th (click)="sortTable('handoverStatus')" class="sortable">
+            Handover Status
+          </th> -->
+          <th (click)="sortTable('releaseDt')" class="sortable">
+            Release Date
+          </th>
+          <th (click)="sortTable('releaseStatus')" class="sortable">
+            Release Status
+          </th>
+          <th (click)="sortTable('refundApproveStatus')" class="sortable">
+            Refund Approve Status
+          </th>
+          <th (click)="sortTable('refundStatus')" class="sortable">
+            Refund Status
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let app of filteredList; let i = index">
+          <td class="text-start">{{ app.appNo }}</td>
+          <td class="text-start">{{ app.spaceAllocNo }}</td>
+          <td class="text-start">{{ app.vcn }}</td>
+          <td class="text-start">{{ app.purposeCd }}</td>
+          <td class="text-start">{{ app.shedYardName }}</td>
+          <td class="text-end">{{ app.totAllotArea }}</td>
+          <!-- <td class="text-end">{{ app.actAllotArea }}</td> -->
+          <td class="text-center">{{ app.fromDt | date: "dd/MM/yyyy" }}</td>
+          <td class="text-center">{{ app.toDt | date: "dd/MM/yyyy" }}</td>
+          <td class="text-center">{{ app.allotDt | date: "dd/MM/yyyy" }}</td>
+          <td class="text-start">{{ app.transMode }}</td>
+          <td class="text-start">{{ app.cargoType }}</td>
+          <td class="text-center">{{ app.handoverDt | date: "dd/MM/yyyy" }}</td>
+          <!-- <td class="text-center">
+            <span class="badge" [ngClass]="app.handoverStatus.cls">
+              {{ app.handoverStatus.text }}
+            </span>
+          </td> -->
+          <td class="text-center">{{ app.releaseDt | date: "dd/MM/yyyy" }}</td>
+          <td class="text-center">
+            <span class="badge" [ngClass]="app.releaseStatus.cls">
+              {{ app.releaseStatus.text }}
+            </span>
+          </td>
+          <td class="text-center">
+            <span class="badge" [ngClass]="app.refundApproveStatus.cls">
+              {{ app.refundApproveStatus.text }}
+            </span>
+          </td>
+          <td class="text-center">
+            <span class="badge" [ngClass]="app.refundStatus.cls">
+              {{ app.refundStatus.text }}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Empty state -->
+  <div
+    *ngIf="!loading && archivedApplications.length === 0"
+    class="text-center mt-5"
+  >
+    <p class="text-muted">No archived applications found.</p>
+  </div>
+</div>

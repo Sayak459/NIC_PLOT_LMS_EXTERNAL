@@ -1,0 +1,77 @@
+.btn {
+  height: 30px;
+  width: 100px;
+  padding: auto;
+}
+/* Modern Back Button */
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  height: 34px;
+  padding: 0 14px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: linear-gradient(135deg, #198754, #20c997);
+  color: white;
+
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  box-shadow: 0 2px 6px rgba(25, 135, 84, 0.25);
+  transition: all 0.2s ease;
+
+  cursor: pointer;
+}
+
+/* Icon sizing */
+.btn-back i {
+  font-size: 0.9rem;
+}
+
+/* Hover effect */
+.btn-back:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(25, 135, 84, 0.35);
+  background: linear-gradient(135deg, #157347, #1aa179);
+}
+
+/* Click effect */
+.btn-back:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.nav-btn {
+  background: #f8f9fa; /* light background */
+  border: 1px solid #d0d0d0; /* subtle border */
+  padding: 6px 12px; /* smaller buttons */
+  font-size: 14px; /* smaller text */
+  font-weight: 500;
+  border-radius: 6px !important;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover effect */
+.nav-btn:hover {
+  background: #e6e6e6;
+  border-color: #bcbcbc;
+}
+
+/* When active (selected tab) */
+.nav-btn.active {
+  background: #0d6efd !important; /* bootstrap primary */
+  color: #fff !important;
+  border-color: #0a58ca;
+}
+
+.app-title {
+  font-weight: 900px;
+  font-size: 15px;
+  color: #343a40;
+  letter-spacing: 0.3px;
+}
+

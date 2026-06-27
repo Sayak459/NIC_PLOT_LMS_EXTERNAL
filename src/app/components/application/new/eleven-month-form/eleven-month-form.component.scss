@@ -1,0 +1,181 @@
+.import-app {
+  background-color: #f9fbfd;
+  min-height: 60vh;
+  color: #334155;
+
+  /* -------------------------
+     CARD & FORM BASE STYLE
+     ------------------------- */
+  .card {
+    border: none;
+    border-radius: 0.6rem;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Reduce inside spacing (fix big empty space issue) */
+  .card-body {
+    padding: 0.75rem 1rem !important;
+  }
+
+  .form-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 3px;
+  }
+
+  /* -------------------------
+     INPUT + ICON SYSTEM
+     ------------------------- */
+  .input-icon,
+  .input-icon-select,
+  .input-icon-textarea {
+    position: relative;
+  }
+
+  .input-icon i,
+  .input-icon-select i,
+  .input-icon-textarea i {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #198754;
+    font-size: 0.9rem;
+    z-index: 4;
+  }
+
+  .input-icon input,
+  .input-icon-select select,
+  .input-icon-textarea textarea {
+    padding-left: 1.9rem !important;
+    border-radius: 0.45rem !important;
+    font-size: 0.85rem;
+    height: 38px !important;
+  }
+
+  textarea.form-control {
+    padding-top: 0.5rem !important;
+    height: auto !important;
+    min-height: 70px;
+  }
+
+  /* -------------------------
+     GRID + COLUMN COMPACTING
+     ------------------------- */
+  .row.g-3 {
+    row-gap: 8px !important; /* tighter vertical spacing */
+  }
+
+  .row.g-2 {
+    row-gap: 6px !important;
+  }
+
+  .col-lg-2,
+  .col-lg-3,
+  .col-md-3,
+  .col-sm-5,
+  .col-sm-6 {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+
+  /* -------------------------
+     STORAGE ROW - 5 Inputs same line
+     ------------------------- */
+  .storage-row {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start; /* Fixes alignment issue */
+  }
+
+  .storage-row > div {
+    flex: 1;
+    min-width: 180px;
+  }
+
+  /* -------------------------
+     TABLES
+     ------------------------- */
+  .table th,
+  .table td {
+    vertical-align: middle;
+    font-size: 0.78rem;
+    padding: 4px 6px !important;
+  }
+
+  .table th {
+    background-color: #f1f5f9;
+    font-weight: 600;
+    color: #334155;
+  }
+
+  /* Sticky compact header */
+  .sticky-header {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 10;
+    padding: 4px 6px !important;
+    font-size: 12px;
+    line-height: 1.15;
+  }
+
+  /* -------------------------
+     FOOTER ACTION BAR
+     ------------------------- */
+  .action-bar {
+    background-color: #f1f5f9;
+    border-top: 1px solid #dee2e6;
+    position: sticky;
+    bottom: 0;
+    padding: 0.7rem !important;
+    z-index: 20;
+  }
+
+  /* -------------------------
+     BUTTONS
+     ------------------------- */
+  .btn {
+    border-radius: 0.45rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 0.35rem 0.8rem;
+  }
+
+  .btn-success {
+    background-color: #198754;
+    border-color: #198754;
+  }
+
+  /* -------------------------
+     HEADER
+     ------------------------- */
+  .header i {
+    font-size: 1.3rem;
+    color: #198754;
+  }
+
+  /* -------------------------
+     MOBILE FIXES
+     ------------------------- */
+  @media (max-width: 768px) {
+    .storage-row {
+      flex-wrap: wrap;
+    }
+
+    .form-label {
+      font-size: 0.78rem;
+    }
+
+    .btn {
+      font-size: 0.75rem;
+    }
+
+    .table th,
+    .table td {
+      font-size: 0.7rem;
+    }
+  }
+}

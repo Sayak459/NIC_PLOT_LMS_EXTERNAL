@@ -1,0 +1,589 @@
+<button class="btn-back" (click)="goBack()">
+  <i class="bi bi-arrow-left"></i>
+  <span>Back</span>
+</button>
+
+<form class="import-app container-fluid p-3" [formGroup]="form">
+  <!-- APPLICATION DETAILS -->
+  <div class="card shadow-sm header text-center mb-3">
+    <h5 class="fw-bold text-success mb-0">
+      <i class="bi bi-box-seam me-2"></i> Update Form
+    </h5>
+  </div>
+
+  <div class="card shadow-sm mb-3">
+    <div class="card-body py-3">
+      <h6 class="fw-bold mb-3">Application & Vessel Details</h6>
+
+      <div class="row g-3 align-items-end">
+        <!-- Application No -->
+        <div class="col-lg-2 col-md-3 col-sm-4">
+          <label class="form-label">Application No </label>
+          <div class="input-icon">
+            <i class="bi bi-123"></i>
+            <input
+              type="text"
+              class="form-control readonly-field"
+              formControlName="appNo"
+              readonly
+            />
+          </div>
+        </div>
+
+        <!-- VCN Number -->
+        <div class="col-lg-2 col-md-3 col-sm-4">
+          <label class="form-label">VCN Number</label>
+          <div class="input-icon">
+            <i class="bi bi-tsunami"></i>
+            <input
+              type="text"
+              class="form-control readonly-field"
+              formControlName="vcn"
+              readonly
+            />
+          </div>
+        </div>
+
+        <!-- Purpose -->
+        <div class="col-lg-2 col-md-3 col-sm-4">
+          <label class="form-label">Purpose</label>
+          <div class="input-icon-select">
+            <i class="bi bi-flag"></i>
+            <select
+              class="form-select readonly-field"
+              formControlName="purposeCd"
+              [disabled]="true"
+            >
+              <option value="">Select Purpose</option>
+              <option
+                *ngFor="let item of purposes | keyvalue"
+                [value]="item.key"
+              >
+                {{ item.value }}
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Vessel Name -->
+        <div class="col-lg-2 col-md-3 col-sm-4">
+          <label class="form-label">Vessel Name</label>
+          <div class="input-icon">
+            <i class="bi bi-flag"></i>
+            <input
+              type="text"
+              class="form-control readonly-field"
+              formControlName="vesname"
+              readonly
+            />
+          </div>
+        </div>
+
+        <!-- Rotation No -->
+        <div class="col-lg-2 col-md-3 col-sm-4">
+          <label class="form-label">Rotation No</label>
+          <div class="input-icon">
+            <i class="bi bi-hash"></i>
+            <input
+              type="text"
+              class="form-control readonly-field"
+              formControlName="rotation_no"
+              readonly
+            />
+          </div>
+        </div>
+
+        <!-- Rotation Date -->
+        <div class="col-lg-2 col-md-3 col-sm-4">
+          <label class="form-label">Rotation Date</label>
+          <div class="input-icon">
+            <i class="bi bi-calendar-event"></i>
+            <input
+              type="date"
+              class="form-control readonly-field"
+              formControlName="rotation_date"
+              readonly
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card shadow-sm mb-3">
+    <div class="card-body py-2">
+      <h6 class="fw-bold mb-2">Transport & Duration</h6>
+
+      <div class="row g-3">
+        <!-- SHOW ONLY FOR APP -->
+        <ng-container *ngIf="licenseType === 'APP'">
+          <!-- Transport Mode -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <label class="form-label"
+              >Transport Mode<span class="text-danger">*</span></label
+            >
+            <div class="input-icon-select">
+              <i class="bi bi-truck"></i>
+              <select class="form-select" formControlName="transMode">
+                <option value="">Select Mode</option>
+                <option *ngFor="let t of transModes | keyvalue" [value]="t.key">
+                  {{ t.value }}
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Agent -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <label class="form-label"
+              >Agent<span class="text-danger">*</span></label
+            >
+            <div class="input-icon-select">
+              <i class="bi bi-person-workspace"></i>
+              <select class="form-select" formControlName="agent">
+                <option value="">Select Agent</option>
+                <option *ngFor="let a of agents | keyvalue" [value]="a.key">
+                  {{ a.value }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </ng-container>
+        <!-- END APP BLOCK -->
+
+        <!-- From Date -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <label class="form-label"
+            >From Date<span class="text-danger">*</span></label
+          >
+          <div class="input-icon">
+            <i class="bi bi-calendar"></i>
+            <input
+              type="date"
+              class="form-control"
+              formControlName="fromDt"
+              noTypeDate
+              noPastDate
+            />
+          </div>
+        </div>
+
+        <!-- Upto Date -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <label class="form-label"
+            >Upto Date<span class="text-danger">*</span></label
+          >
+          <div class="input-icon">
+            <i class="bi bi-calendar-check"></i>
+            <input
+              type="date"
+              class="form-control"
+              formControlName="uptoDt"
+              noTypeDate
+              noPastDate
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARGO DETAILS -->
+  <div class="card shadow-sm mb-3">
+    <div class="card-body py-2">
+      <h6 class="fw-bold mb-2">Cargo Details</h6>
+
+      <div class="row g-2 align-items-end">
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <label class="form-label"
+            >Line Number<span class="text-danger">*</span></label
+          >
+          <div class="input-icon-select">
+            <i class="bi bi-list-ol"></i>
+            <!-- <select class="form-select" formControlName="line_no">
+              <option value="">Select Line</option>
+              <option *ngFor="let ln of lineOptions" [value]="ln.lndcNo">
+                {{ ln.lndcNo }} - {{ ln.cargoDesc }}
+              </option>
+            </select> -->
+
+            <select class="form-select line-dropdown" formControlName="line_no">
+              <option value="">Select Line</option>
+
+              <option
+                *ngFor="let ln of lineOptions"
+                [value]="ln.lndcNo"
+                [title]="'Line No: ' + ln.lndcNo + ' | Cargo: ' + ln.cargoDesc"
+              >
+                {{ ln.lndcNo }} - {{ ln.cargoDesc | slice: 0 : 25
+                }}{{ ln.cargoDesc?.length > 25 ? "..." : "" }}
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-auto">
+          <button
+            class="btn btn-success btn-sm"
+            type="button"
+            (click)="addCargoRow()"
+          >
+            <i class="bi bi-plus-lg"></i> Add
+          </button>
+        </div>
+
+        <div
+          class="col table-responsive"
+          style="max-height: 100px; overflow-y: auto"
+        >
+          <table class="table table-bordered mb-0">
+            <thead>
+              <tr>
+                <th class="sticky-header">SL No</th>
+                <th class="sticky-header">Line No</th>
+                <th class="sticky-header">Cargo</th>
+                <th class="sticky-header">Description</th>
+                <th class="sticky-header">Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let r of addedCargoRows; let i = index">
+                <td>{{ r.sl }}</td>
+                <td>{{ r.lineNo }}</td>
+                <td>{{ r.cargoCode }}</td>
+                <td>{{ r.cargoDesc }}</td>
+                <td>
+                  <button
+                    class="btn btn-outline-danger btn-sm"
+                    type="button"
+                    (click)="removeCargoRow(i)"
+                  >
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </td>
+              </tr>
+
+              <tr *ngIf="addedCargoRows.length === 0">
+                <td colspan="5" class="text-center small text-muted">
+                  No cargo rows added
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STORAGE -->
+  <div class="card shadow-sm mb-3">
+    <div class="card-body py-2">
+      <h6 class="fw-bold mb-2">Storage Details</h6>
+
+      <div class="row g-2 align-items-end">
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <label class="form-label"
+            >Cargo Type<span class="text-danger">*</span></label
+          >
+          <div class="input-icon-select">
+            <i class="bi bi-diagram-3"></i>
+            <select class="form-select" formControlName="cargoType">
+              <option value="">Select</option>
+              <option
+                *ngFor="let item of cargoTypes | keyvalue"
+                [value]="item.key"
+              >
+                {{ item.value }}
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <label class="form-label"
+            >Shed Location<span class="text-danger">*</span></label
+          >
+          <div class="input-icon-select">
+            <i class="bi bi-pin-map"></i>
+
+            <select
+              class="form-select"
+              formControlName="shed_location"
+              (change)="onLocationChange($event)"
+            >
+              <option value="">Select Shed</option>
+              <option value="KPD">KPD</option>
+              <option value="NSD">NSD</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Shed / Yard -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <label class="form-label"
+            >Shed / Yard<span class="text-danger">*</span></label
+          >
+          <div class="input-icon-select">
+            <i class="bi bi-geo-alt"></i>
+            <select class="form-select" formControlName="shedYardName">
+              <option value="">Select Yard</option>
+              <option
+                *ngFor="
+                  let y of shedYardsByGroup[form.get('shed_location')?.value]
+                "
+                [value]="y.shedCd"
+              >
+                {{ y.shedYardName }}
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <label class="form-label"
+            >Area Required<span class="text-danger">*</span></label
+          >
+          <div class="input-icon">
+            <i class="bi bi-layers"></i>
+            <input
+              type="number"
+              class="form-control"
+              formControlName="totalAppArea"
+              areaInput
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FILE UPLOAD & REMARK -->
+  <div class="card shadow-sm mb-3">
+    <div class="card-body py-2">
+      <h6 class="fw-bold mb-3">Upload Documents & Remarks</h6>
+
+      <div class="row g-3">
+        <!-- Upload PDF -->
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <label class="form-label">
+            Upload Licence File<span class="text-danger">*</span>
+          </label>
+          <div class="input-icon">
+            <i class="bi bi-file-earmark-arrow-up"></i>
+            <input
+              type="file"
+              class="form-control"
+              accept="application/pdf"
+              (change)="onFileChange($event)"
+              fileSize
+            />
+          </div>
+          <small class="text-muted d-block mt-1"> PDF only • Max 2MB </small>
+          <small class="text-danger" *ngIf="fileError">{{ fileError }}</small>
+        </div>
+
+        <!-- PDF Description -->
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <label class="form-label">
+            Pdf Description<span class="text-danger">*</span>
+          </label>
+          <textarea
+            class="form-control"
+            rows="2"
+            formControlName="pdf_desc"
+            minlength="5"
+            maxlength="30"
+            placeholder="Enter PDF Description (5-30 characters)"
+            remarksInput
+          ></textarea>
+        </div>
+
+        <!-- Port Remarks -->
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <label class="form-label">Port Remarks</label>
+          <textarea
+            class="form-control readonly-field"
+            rows="2"
+            formControlName="verifyRemark"
+            minlength="5"
+            maxlength="200"
+            remarksInput
+            noCopyPaste
+            readonly
+          ></textarea>
+        </div>
+
+        <!-- Party Remarks -->
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <label class="form-label">
+            Party Remarks<span class="text-danger">*</span>
+          </label>
+          <textarea
+            class="form-control"
+            rows="2"
+            formControlName="party_remarks"
+            minlength="5"
+            maxlength="200"
+            placeholder="Enter remarks (5-200 characters)"
+            remarksInput
+            noCopyPaste
+          ></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HIDDEN VERIFY REMARK -->
+  <div class="d-none">
+    <input type="text" formControlName="verifyRemark" />
+  </div>
+
+  <!-- FOOTER -->
+  <div class="action-bar text-center py-3 mt-3">
+    <button
+      class="btn btn-success btn-sm px-4 me-2"
+      (click)="saveForm()"
+      [disabled]="saving"
+    >
+      <i class="bi bi-check2-circle me-1"></i> Update
+    </button>
+
+    <button
+      class="btn btn-outline-secondary btn-sm px-4"
+      (click)="clearForm()"
+      [disabled]="saving"
+    >
+      <i class="bi bi-x-circle me-1"></i> Clear
+    </button>
+  </div>
+
+  <!-- Hidden Trigger Buttons -->
+  <button
+    id="openSuccessModalBtn"
+    type="button"
+    class="d-none"
+    data-bs-toggle="modal"
+    data-bs-target="#suc"
+  ></button>
+  <button
+    id="openFailedModalBtn"
+    type="button"
+    class="d-none"
+    data-bs-toggle="modal"
+    data-bs-target="#fail"
+  ></button>
+  <button
+    id="openMissingModalBtn"
+    type="button"
+    class="d-none"
+    data-bs-toggle="modal"
+    data-bs-target="#miss"
+  ></button>
+
+  <!-- Success Modal -->
+  <div
+    class="modal fade"
+    id="suc"
+    tabindex="-1"
+    aria-hidden="true"
+    data-bs-backdrop="static"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title">Success</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            (click)="redirectBack()"
+          ></button>
+        </div>
+
+        <div class="modal-body">
+          <p><strong>Status:</strong> {{ modalData.status }}</p>
+          <p><strong>Message:</strong> {{ modalData.msg }}</p>
+          <p>
+            <strong>Application No: </strong>
+            <span class="text-monospace">{{ modalData.app_no }}</span>
+          </p>
+        </div>
+
+        <div class="modal-footer">
+          <button
+            class="btn btn-success"
+            data-bs-dismiss="modal"
+            (click)="redirectBack()"
+          >
+            OK
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Failed Modal -->
+  <div
+    class="modal fade"
+    id="fail"
+    tabindex="-1"
+    aria-hidden="true"
+    data-bs-backdrop="static"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title">Failed</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+          ></button>
+        </div>
+
+        <div class="modal-body">
+          <p><strong>Status:</strong> {{ modalData.status }}</p>
+          <p><strong>Message:</strong> {{ modalData.msg }}</p>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Missing Fields Modal -->
+  <div
+    class="modal fade"
+    id="miss"
+    tabindex="-1"
+    aria-hidden="true"
+    data-bs-backdrop="static"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-warning">
+          <h5 class="modal-title">Missing Fields</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+          ></button>
+        </div>
+
+        <div class="modal-body">
+          <p>Please fill the following required fields:</p>
+          <ul>
+            <li *ngFor="let f of missingFields">{{ f }}</li>
+          </ul>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-warning" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,182 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [88.3179074796812, 22.5418634973858],
+                        [88.3179161847155, 22.5418804706489],
+                        [88.3179370432437, 22.541919263159 ],
+                        [88.3180450396212, 22.5418745757334],
+                        [88.3180153679289, 22.5418152922392],
+                        [88.3179074796812, 22.5418634973858]
+                    ]
+                ]
+            },
+            "properties": {
+    "floor": "ground",
+                "fill-opacity": 0,
+                "stroke-opacity": 1,
+                "stroke": "#ff0000",
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": true,
+                "fill-opaci": 0,
+                "stroke-opa": 1,
+                "ID": "7-6",
+                "REMARKS": "POLYGON ID-7"
+            },
+            "id": "polgon7.1"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [88.3179664896853, 22.541974027396 ],
+                        [88.3179959361284, 22.5420287916358],
+                        [88.3180990569424, 22.5419861216366],
+                        [88.3180781637619, 22.5419407570849],
+                        [88.3180727988506, 22.5419300381077],
+                        [88.3179664896853, 22.541974027396 ]
+                    ]
+                ]
+            },
+            "properties": {
+    "floor": "ground",
+                "fill-opacity": 0,
+                "stroke-opacity": 1,
+                "stroke": "#ff0000",
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": true,
+                "fill-opaci": 0,
+                "stroke-opa": 1,
+                "ID": "7-4",
+                "REMARKS": "POLYGON ID-7"
+            },
+            "id": "polgon7.2"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [88.3179370432437, 22.541919263159 ],
+                        [88.3179664896853, 22.541974027396 ],
+                        [88.3180727988506, 22.5419300381077],
+                        [88.3180450396212, 22.5418745757334],
+                        [88.3179370432437, 22.541919263159 ]
+                    ]
+                ]
+            },
+            "properties": {
+    "floor": "ground",
+                "fill-opacity": 0,
+                "stroke-opacity": 1,
+                "stroke": "#ff0000",
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": true,
+                "fill-opaci": 0,
+                "stroke-opa": 1,
+                "ID": "7-5",
+                "REMARKS": "POLYGON ID-7"
+            },
+            "id": "polgon7.3"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [88.3180548290186, 22.5421383201229],
+                        [88.3180854133885, 22.5421952006691],
+                        [88.3181693631317, 22.5421707924677],
+                        [88.318150570144 , 22.5420987037259],
+                        [88.3180548290186, 22.5421383201229]
+                    ]
+                ]
+            },
+            "properties": {
+    "floor": "ground",
+                "fill-opacity": 0,
+                "stroke-opacity": 1,
+                "stroke": "#ff0000",
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": true,
+                "fill-opaci": 0,
+                "stroke-opa": 1,
+                "ID": "7-1",
+                "REMARKS": "POLYGON ID-7"
+            },
+            "id": "polgon7.4"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [88.3179959361284, 22.5420287916358],
+                        [88.3180253825728, 22.5420835558781],
+                        [88.3181249554298, 22.5420423539686],
+                        [88.3180990569424, 22.5419861216366],
+                        [88.3179959361284, 22.5420287916358]
+                    ]
+                ]
+            },
+            "properties": {
+    "floor": "ground",
+                "fill-opacity": 0,
+                "stroke-opacity": 1,
+                "stroke": "#ff0000",
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": true,
+                "fill-opaci": 0,
+                "stroke-opa": 1,
+                "ID": "7-3",
+                "REMARKS": "POLYGON ID-7"
+            },
+            "id": "polgon7.5"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [88.3180253825728, 22.5420835558781],
+                        [88.3180548290186, 22.5421383201229],
+                        [88.318150570144 , 22.5420987037259],
+                        [88.3181501294461, 22.5420970132348],
+                        [88.3181249554298, 22.5420423539686],
+                        [88.3180253825728, 22.5420835558781]
+                    ]
+                ]
+            },
+            "properties": {
+    "floor": "ground",
+                "fill-opacity": 0,
+                "stroke-opacity": 1,
+                "stroke": "#ff0000",
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": true,
+                "fill-opaci": 0,
+                "stroke-opa": 1,
+                "ID": "7-2",
+                "REMARKS": "POLYGON ID-7"
+            },
+            "id": "polgon7.6"
+        }
+    ]
+}

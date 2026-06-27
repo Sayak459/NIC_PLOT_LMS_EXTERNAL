@@ -1,0 +1,443 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [88.3172932686456, 22.5421878643071, 0],
+                        [88.3173192742667, 22.5422325843655, 0],
+                        [88.3174488849521, 22.5421774929949, 0],
+                        [88.317423248009 , 22.5421329663382, 0],
+                        [88.3172932686456, 22.5421878643071, 0]
+                    ]
+                ]
+            },
+            "properties": {
+    "floor": "ground",
+                "fill-opacity": 0,
+                "stroke-opacity": 1,
+                "stroke": "#ff0000",
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": true,
+                "fill-opaci": 0,
+                "stroke-opa": 1,
+                "ID": "6-1",
+                "REMARKS": "POLYGON ID-6"
+            },
+            "id": "poly_6.1"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [88.3172411811613, 22.5420982930817, 0],
+                        [88.317267224903 , 22.5421430786936, 0],
+                        [88.3173974115788, 22.5420880931738, 0],
+                        [88.3173715751658, 22.5420432200042, 0],
+                        [88.3172411811613, 22.5420982930817, 0]
+                    ]
+                ]
+            },
+            "properties": {
+    "floor": "ground",
+                "fill-opacity": 0,
+                "stroke-opacity": 1,
+                "stroke": "#ff0000",
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": true,
+                "fill-opaci": 0,
+                "stroke-opa": 1,
+                "ID": "6-3",
+                "REMARKS": "POLYGON ID-6"
+            },
+            "id": "poly_6.2"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [88.317267224903 , 22.5421430786936, 0],
+                        [88.3172932686456, 22.5421878643071, 0],
+                        [88.317423248009 , 22.5421329663382, 0],
+                        [88.3173974115788, 22.5420880931738, 0],
+                        [88.317267224903 , 22.5421430786936, 0]
+                    ]
+                ]
+            },
+            "properties": {
+    "floor": "ground",
+                "fill-opacity": 0,
+                "stroke-opacity": 1,
+                "stroke": "#ff0000",
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": true,
+                "fill-opaci": 0,
+                "stroke-opa": 1,
+                "ID": "6-2",
+                "REMARKS": "POLYGON ID-6"
+            },
+            "id": "poly_6.3"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [88.3171890936808, 22.542008721863 , 0],
+                        [88.3172151374205, 22.5420535074716, 0],
+                        [88.3173457387701, 22.5419983468295, 0],
+                        [88.3173199023917, 22.5419534736495, 0],
+                        [88.3171890936808, 22.542008721863 , 0]
+                    ]
+                ]
+            },
+            "properties": {
+    "floor": "ground",
+                "fill-opacity": 0,
+                "stroke-opacity": 1,
+                "stroke": "#ff0000",
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": true,
+                "fill-opaci": 0,
+                "stroke-opa": 1,
+                "ID": "6-5",
+                "REMARKS": "POLYGON ID-6"
+            },
+            "id": "poly_6.4"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [88.3172151374205, 22.5420535074716, 0],
+                        [88.3172411811613, 22.5420982930817, 0],
+                        [88.3173715751658, 22.5420432200042, 0],
+                        [88.3173457387701, 22.5419983468295, 0],
+                        [88.3172151374205, 22.5420535074716, 0]
+                    ]
+                ]
+            },
+            "properties": {
+    "floor": "ground",
+                "fill-opacity": 0,
+                "stroke-opacity": 1,
+                "stroke": "#ff0000",
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": true,
+                "fill-opaci": 0,
+                "stroke-opa": 1,
+                "ID": "6-4",
+                "REMARKS": "POLYGON ID-6"
+            },
+            "id": "poly_6.5"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [88.3171370062041, 22.541919150651 , 0],
+                        [88.317163049942 , 22.5419639362562, 0],
+                        [88.3172940660306, 22.5419086004644, 0],
+                        [88.3172682296868, 22.541863727274 , 0],
+                        [88.3171370062041, 22.541919150651 , 0]
+                    ]
+                ]
+            },
+            "properties": {
+    "floor": "ground",
+                "fill-opacity": 0,
+                "stroke-opacity": 1,
+                "stroke": "#ff0000",
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": true,
+                "fill-opaci": 0,
+                "stroke-opa": 1,
+                "ID": "6-7",
+                "REMARKS": "POLYGON ID-6"
+            },
+            "id": "poly_6.6"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [88.317163049942 , 22.5419639362562, 0],
+                        [88.3171890936808, 22.542008721863 , 0],
+                        [88.3173199023917, 22.5419534736495, 0],
+                        [88.3172940660306, 22.5419086004644, 0],
+                        [88.317163049942 , 22.5419639362562, 0]
+                    ]
+                ]
+            },
+            "properties": {
+    "floor": "ground",
+                "fill-opacity": 0,
+                "stroke-opacity": 1,
+                "stroke": "#ff0000",
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": true,
+                "fill-opaci": 0,
+                "stroke-opa": 1,
+                "ID": "6-6",
+                "REMARKS": "POLYGON ID-6"
+            },
+            "id": "poly_6.7"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [88.3170849187314, 22.5418295794456, 0],
+                        [88.3171109624673, 22.5418743650475, 0],
+                        [88.3172423933602, 22.5418188540785, 0],
+                        [88.317216557051 , 22.5417739808778, 0],
+                        [88.3170849187314, 22.5418295794456, 0]
+                    ]
+                ]
+            },
+            "properties": {
+    "floor": "ground",
+                "fill-opacity": 0,
+                "stroke-opacity": 1,
+                "stroke": "#ff0000",
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": true,
+                "fill-opaci": 0,
+                "stroke-opa": 1,
+                "ID": "6-9",
+                "REMARKS": "POLYGON ID-6"
+            },
+            "id": "poly_6.8"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [88.3171109624673, 22.5418743650475, 0],
+                        [88.3171370062041, 22.541919150651 , 0],
+                        [88.3172682296868, 22.541863727274 , 0],
+                        [88.3172423933602, 22.5418188540785, 0],
+                        [88.3171109624673, 22.5418743650475, 0]
+                    ]
+                ]
+            },
+            "properties": {
+    "floor": "ground",
+                "fill-opacity": 0,
+                "stroke-opacity": 1,
+                "stroke": "#ff0000",
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": true,
+                "fill-opaci": 0,
+                "stroke-opa": 1,
+                "ID": "6-8",
+                "REMARKS": "POLYGON ID-6"
+            },
+            "id": "poly_6.9"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [88.3170320919803, 22.5417387369547, 0],
+                        [88.3170588749965, 22.5417847938455, 0],
+                        [88.317190720759 , 22.5417291076719, 0],
+                        [88.3171603029129, 22.5416762770476, 0],
+                        [88.3170947798529, 22.5417081976266, 0],
+                        [88.3170320919803, 22.5417387369547, 0]
+                    ]
+                ]
+            },
+            "properties": {
+    "floor": "ground",
+                "fill-opacity": 0,
+                "stroke-opacity": 1,
+                "stroke": "#ff0000",
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": true,
+                "fill-opaci": 0,
+                "stroke-opa": 1,
+                "ID": "6-11",
+                "REMARKS": "POLYGON ID-6"
+            },
+            "id": "poly_6.10"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [88.3170588749965, 22.5417847938455, 0],
+                        [88.3170849187314, 22.5418295794456, 0],
+                        [88.317216557051 , 22.5417739808778, 0],
+                        [88.317190720759 , 22.5417291076719, 0],
+                        [88.3170588749965, 22.5417847938455, 0]
+                    ]
+                ]
+            },
+            "properties": {
+    "floor": "ground",
+                "fill-opacity": 0,
+                "stroke-opacity": 1,
+                "stroke": "#ff0000",
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": true,
+                "fill-opaci": 0,
+                "stroke-opa": 1,
+                "ID": "6-10",
+                "REMARKS": "POLYGON ID-6"
+            },
+            "id": "poly_6.11"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [88.3169397252492, 22.5415799003092, 0],
+                        [88.3169886845119, 22.5416640921493, 0],
+                        [88.3170527466082, 22.5416357165776, 0],
+                        [88.3170025594678, 22.5415491750398, 0],
+                        [88.3169943099648, 22.5415532089626, 0],
+                        [88.3169397252492, 22.5415799003092, 0]
+                    ]
+                ]
+            },
+            "properties": {
+    "floor": "ground",
+                "fill-opacity": 0,
+                "stroke-opacity": 1,
+                "stroke": "#ff0000",
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": true,
+                "fill-opaci": 0,
+                "stroke-opa": 1,
+                "ID": "6-13",
+                "REMARKS": "POLYGON ID-6"
+            },
+            "id": "poly_6.12"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [88.3169886845119, 22.5416640921493, 0],
+                        [88.3170320919803, 22.5417387369547, 0],
+                        [88.3170947798529, 22.5417081976266, 0],
+                        [88.3170527466082, 22.5416357165776, 0],
+                        [88.3169886845119, 22.5416640921493, 0]
+                    ]
+                ]
+            },
+            "properties": {
+    "floor": "ground",
+                "fill-opacity": 0,
+                "stroke-opacity": 1,
+                "stroke": "#ff0000",
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": true,
+                "fill-opaci": 0,
+                "stroke-opa": 1,
+                "ID": "6-12",
+                "REMARKS": "POLYGON ID-6"
+            },
+            "id": "poly_6.13"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [88.3169479989705, 22.5414774750047, 0],
+                        [88.3169943099648, 22.5415532089626, 0],
+                        [88.3170025594678, 22.5415491750398, 0],
+                        [88.3170715380285, 22.5415154452024, 0],
+                        [88.3170258649535, 22.5414391450532, 0],
+                        [88.3169479989705, 22.5414774750047, 0]
+                    ]
+                ]
+            },
+            "properties": {
+    "floor": "ground",
+                "fill-opacity": 0,
+                "stroke-opacity": 1,
+                "stroke": "#ff0000",
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": true,
+                "fill-opaci": 0,
+                "stroke-opa": 1,
+                "ID": "6-15",
+                "REMARKS": "POLYGON ID-6"
+            },
+            "id": "poly_6.14"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [88.3168952597731, 22.5415034361216, 0],
+                        [88.3169397252492, 22.5415799003092, 0],
+                        [88.3169943099648, 22.5415532089626, 0],
+                        [88.3169479989705, 22.5414774750047, 0],
+                        [88.3168952597731, 22.5415034361216, 0]
+                    ]
+                ]
+            },
+            "properties": {
+    "floor": "ground",
+                "fill-opacity": 0,
+                "stroke-opacity": 1,
+                "stroke": "#ff0000",
+                "tessellate": -1,
+                "extrude": 0,
+                "visibility": true,
+                "fill-opaci": 0,
+                "stroke-opa": 1,
+                "ID": "6-14",
+                "REMARKS": "POLYGON ID-6"
+            },
+            "id": "poly_6.15"
+        }
+    ]
+}

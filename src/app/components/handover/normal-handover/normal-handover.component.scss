@@ -1,0 +1,142 @@
+.normal-handover-wrap {
+
+  /* Scroll container */
+  .table-area {
+    max-width: 98%;
+    max-height: 51vh;
+    overflow-y: auto;
+    overflow-x: auto;
+    margin: 0 auto;
+
+    background: #ffffff;
+    border-radius: 0.6rem;
+    border: 1px solid #198754; /* Match green theme */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Table styling */
+  table.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem; /* matches the unified design */
+    color: #334155;
+
+    th {
+      font-weight: 600;
+      background-color: #e8f8ef !important; /* soft green */
+      color: #198754;
+      white-space: nowrap;
+      text-align: center;
+      vertical-align: middle;
+      padding: 8px;
+    }
+
+    td {
+      text-align: center;
+      vertical-align: middle;
+      white-space: nowrap;
+      padding: 8px;
+    }
+
+    /* Even rows */
+    tbody tr:nth-child(even) {
+      background-color: #f9fbfd !important;
+    }
+
+    /* Odd rows */
+    tbody tr:nth-child(odd) {
+      background-color: #ffffff !important;
+    }
+
+    /* Hover */
+    tbody tr:hover {
+      background-color: #e8f0ff !important;
+      cursor: pointer;
+    }
+
+    /* Sticky header */
+    thead.sticky-top {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+  }
+
+
+
+ .table-scroll {
+  overflow-x: auto; /* enable horizontal scroll */
+  overflow-y: auto; /* optional vertical scroll */
+  position: relative; /* sticky will be relative to this */
+}
+
+.sticky-update-cell {
+  position: sticky;
+  right: 0;
+  background: #ffffff; /* same as table bg */ /* higher than table rows */
+  min-width: 20px; /* ensure button doesn’t shrink too much */
+  text-align: center;
+}
+
+.floating-update {
+  padding: 0.2rem 0.4rem; /* reduce button padding */
+  font-size: 0.7rem;       /* smaller text */
+  min-width: 50px;         /* optional: keep a minimum width */
+}
+
+  /* Form area (same style as one-month-wrap) */
+  .form-area {
+    max-width: 98%;
+    margin: 1rem auto 2rem auto;
+    background: #f8fff8; /* light green */
+    border: 1px solid #198754;
+    border-radius: 0.6rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Badge style */
+  .badge {
+    padding: 0.35em 0.55em;
+    font-size: 0.78rem;
+    border-radius: 0.4rem;
+  }
+
+  // Sortable column indicator
+  .sortable {
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+  }
+
+  .sortable::after {
+    content: "⇅";
+    font-size: 0.7rem;
+    margin-left: 6px;
+    opacity: 0.4;
+  }
+
+  .sortable.active-asc::after {
+    content: "▲";
+    opacity: 1;
+  }
+
+  .sortable.active-desc::after {
+    content: "▼";
+    opacity: 1;
+  }
+}
+
+/* Add in your component SCSS or global styles */
+.btn-icon-sm {
+  padding: 0.25rem 0.4rem;  /* smaller padding */
+  font-size: 1.2rem;        /* smaller icon size */
+  width: 28px;               /* fixed square buttons */
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.download-section span {
+  font-size: 0.85rem;        /* slightly smaller label */
+}

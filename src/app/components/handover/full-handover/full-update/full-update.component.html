@@ -1,0 +1,312 @@
+<button class="btn-back" (click)="goBack()">
+  <i class="bi bi-arrow-left"></i>
+  <span>Back</span>
+</button>
+
+<form class="import-app container-fluid p-3">
+  <!-- ===========================
+       SECTION: TOP TITLE
+       =========================== -->
+  <div class="card shadow-sm header text-center mb-3">
+    <h5 class="fw-bold text-success mb-0">
+      <i class="bi bi-rulers me-2"></i> Full handover Update Form
+    </h5>
+  </div>
+
+  <!-- ===========================
+       SECTION 1: DETAILS
+       =========================== -->
+  <div class="card shadow-sm mb-3 info-card">
+    <div class="card-header bg-light fw-bold">Handover Details</div>
+    <div class="card-body" *ngIf="details">
+      <div class="row g-2 flex-wrap align-items-start">
+        <div class="col-lg-2 col-md-4 col-sm-6">
+          <label class="form-label fw-semibold">Application No:</label>
+          <input
+            type="text"
+            class="form-control readonly-field"
+            [value]="details.appNo"
+            readonly
+          />
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-sm-6">
+          <label class="form-label fw-semibold">Space Allocation No:</label>
+          <input
+            type="text"
+            class="form-control readonly-field"
+            [value]="details.spaceAllocNo"
+            readonly
+          />
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-sm-6">
+          <label class="form-label fw-semibold">From Date:</label>
+          <input
+            type="text"
+            class="form-control readonly-field"
+            [value]="details.fromDt | date: 'dd/MM/yyyy'"
+            readonly
+          />
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-sm-6">
+          <label class="form-label fw-semibold">To Date:</label>
+          <input
+            type="text"
+            class="form-control readonly-field"
+            [value]="details.toDt | date: 'dd/MM/yyyy'"
+            readonly
+          />
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-sm-6">
+          <label class="form-label fw-semibold">Actual Area (Sq.M):</label>
+          <input
+            type="text"
+            class="form-control readonly-field"
+            [value]="details.actAllotArea"
+            readonly
+          />
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-sm-6">
+          <label class="form-label fw-semibold">Port Remarks:</label>
+          <textarea
+            class="form-control readonly-field"
+            rows="1"
+            [value]="details.portRemarks"
+            readonly
+          ></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===========================
+       SECTION 2: UPDATE FORM
+       =========================== -->
+  <div class="card shadow-sm mb-3 p-3">
+    <div class="row g-2">
+      <div class="col-lg-6">
+        <label class="form-label fw-semibold"
+          >Requested Handover Date<span class="text-danger">*</span></label
+        >
+        <input
+          type="date"
+          class="form-control"
+          [(ngModel)]="form.requestedFullHandoverDate"
+          name="requestedFullHandoverDate"
+          noCopyPaste
+          noPastDate
+          noTypeDate
+        />
+      </div>
+
+      <div class="col-lg-6">
+        <label class="form-label fw-semibold"
+          >Remarks<span class="text-danger">*</span></label
+        >
+        <textarea
+          rows="2"
+          class="form-control"
+          [(ngModel)]="form.remarks"
+          name="remarks"
+          placeholder="Enter remarks"
+          minlength="5"
+          maxlength="30"
+          remarksInput
+          noCopyPaste
+        ></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===========================
+       SECTION 3: FILE UPLOAD
+       =========================== -->
+  <div class="card shadow-sm mb-3 p-3">
+    <h6 class="fw-bold mb-3 text-primary">
+      <i class="bi bi-file-earmark-arrow-up me-2"></i> Upload Document
+    </h6>
+
+    <div class="row g-2">
+      <div class="col-lg-6">
+        <label class="form-label fw-semibold"
+          >Choose File<span class="text-danger">*</span></label
+        >
+        <input
+          type="file"
+          class="form-control"
+          accept="application/pdf"
+          (change)="onFileChange($event)"
+          fileSize
+        />
+        <small class="text-muted d-block mt-1">
+          Only <strong>PDF</strong> files are allowed. Max size:
+          <strong>2MB</strong>.
+        </small>
+        <small class="text-danger" *ngIf="fileError">{{ fileError }}</small>
+      </div>
+
+      <div class="col-lg-6">
+        <label class="form-label fw-semibold"
+          >Pdf Description<span class="text-danger">*</span></label
+        >
+        <textarea
+          rows="2"
+          class="form-control"
+          [(ngModel)]="form.docDescription"
+          name="docDescription"
+          placeholder="Enter document description"
+          minlength="5"
+          maxlength="200"
+          noCopyPaste
+          remarksInput
+        ></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===========================
+       FOOTER BUTTONS
+       =========================== -->
+  <div class="action-bar text-center py-3 mt-3">
+    <button class="btn btn-success btn-sm px-4 me-2" (click)="saveUpdate()">
+      <i class="bi bi-check2-circle me-1"></i> Update
+    </button>
+
+    <button class="btn btn-outline-secondary btn-sm px-4" (click)="clearForm()">
+      <i class="bi bi-x-circle me-1"></i> Clear
+    </button>
+  </div>
+
+  <!-- Hidden Trigger Buttons -->
+  <button
+    id="openSuccessModalBtn"
+    type="button"
+    class="d-none"
+    data-bs-toggle="modal"
+    data-bs-target="#suc"
+  ></button>
+  <button
+    id="openFailedModalBtn"
+    type="button"
+    class="d-none"
+    data-bs-toggle="modal"
+    data-bs-target="#fail"
+  ></button>
+  <button
+    id="openMissingModalBtn"
+    type="button"
+    class="d-none"
+    data-bs-toggle="modal"
+    data-bs-target="#miss"
+  ></button>
+
+  <!-- Success Modal -->
+  <div
+    class="modal fade"
+    id="suc"
+    tabindex="-1"
+    aria-hidden="true"
+    data-bs-backdrop="static"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title">Success</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            (click)="redirectBack()"
+          ></button>
+        </div>
+
+        <div class="modal-body">
+          <p><strong>Status:</strong> {{ modalData.status }}</p>
+          <p><strong>Message:</strong> {{ modalData.msg }}</p>
+          <p>
+            <strong>Application No: </strong>
+            <span class="text-monospace">{{ modalData.app_no }}</span>
+          </p>
+        </div>
+
+        <div class="modal-footer">
+          <button
+            class="btn btn-success"
+            data-bs-dismiss="modal"
+            (click)="redirectBack()"
+          >
+            OK
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Failed Modal -->
+  <div
+    class="modal fade"
+    id="fail"
+    tabindex="-1"
+    aria-hidden="true"
+    data-bs-backdrop="static"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title">Failed</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+          ></button>
+        </div>
+
+        <div class="modal-body">
+          <p><strong>Status:</strong> {{ modalData.status }}</p>
+          <p><strong>Message:</strong> {{ modalData.msg }}</p>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Missing Fields Modal -->
+  <div
+    class="modal fade"
+    id="miss"
+    tabindex="-1"
+    aria-hidden="true"
+    data-bs-backdrop="static"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-warning">
+          <h5 class="modal-title">Missing Fields</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+          ></button>
+        </div>
+
+        <div class="modal-body">
+          <p>Please fill the following required fields:</p>
+          <ul>
+            <li *ngFor="let f of missingFields">{{ f }}</li>
+          </ul>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-warning" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

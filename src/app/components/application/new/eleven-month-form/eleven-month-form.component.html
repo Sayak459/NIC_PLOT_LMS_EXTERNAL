@@ -1,0 +1,415 @@
+<form class="import-app container-fluid py-3" [formGroup]="form">
+  <!-- ===========================
+       SECTION: TOP TITLE
+       =========================== -->
+  <div class="card shadow-sm header text-center mb-3">
+    <h5 class="fw-bold text-success mb-0">
+      <i class="bi bi-box-seam me-2"></i> Mid Term Licence Application
+    </h5>
+  </div>
+
+  <!-- ===========================
+       SECTION: STORAGE DETAILS
+       =========================== -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-body py-3">
+      <h6 class="fw-bold mb-3">Storage Details</h6>
+
+      <div class="row g-3 storage-row">
+        <!-- Shed Location -->
+        <div class="col-lg-2 col-md-3 col-sm-6">
+          <label class="form-label"
+            >Shed Location<span class="text-danger">*</span></label
+          >
+          <div class="input-icon-select">
+            <i class="bi bi-pin-map"></i>
+            <select class="form-select" formControlName="shed_location">
+              <option value="">Select Shed</option>
+              <option value="KPD">KPD</option>
+              <option value="NSD">NSD</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Shed / Yard -->
+        <div class="col-lg-2 col-md-3 col-sm-6">
+          <label class="form-label"
+            >Shed / Yard<span class="text-danger">*</span></label
+          >
+          <div class="input-icon-select">
+            <i class="bi bi-geo-alt"></i>
+            <select class="form-select" formControlName="shed_yard">
+              <option value="">Select Yard</option>
+              <option
+                *ngFor="
+                  let y of shedYardsByGroup[form.get('shed_location')?.value]
+                "
+                [value]="y.shedCd"
+              >
+                {{ y.shedYardName }}
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Apply Area -->
+        <div class="col-lg-2 col-md-3 col-sm-6">
+          <label class="form-label"
+            >Area Required (Sq.M)<span class="text-danger">*</span></label
+          >
+          <div class="input-icon">
+            <i class="bi bi-layers"></i>
+            <input
+              type="number"
+              class="form-control"
+              formControlName="apply_area"
+              areaInput
+              noCopyPaste
+            />
+          </div>
+        </div>
+
+        <!-- From Date -->
+        <div class="col-lg-2 col-md-3 col-sm-6">
+          <label class="form-label"
+            >From Date<span class="text-danger">*</span></label
+          >
+          <div class="input-icon">
+            <i class="bi bi-calendar"></i>
+            <input
+              type="date"
+              class="form-control"
+              formControlName="from_dt"
+              noPastDate
+              noTypeDate
+              noCopyPaste
+            />
+          </div>
+        </div>
+
+        <!-- Upto Date -->
+        <div class="col-lg-2 col-md-3 col-sm-6">
+          <label class="form-label"
+            >Upto Date<span class="text-danger">*</span></label
+          >
+          <div class="input-icon">
+            <i class="bi bi-calendar-check"></i>
+            <input
+              type="date"
+              class="form-control"
+              formControlName="upto_dt"
+              readonly
+              noPastDate
+              noTypeDate
+              noCopyPaste
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===========================
+       SECTION: CARGO DETAILS
+       =========================== -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-body py-3">
+      <h6 class="fw-bold mb-3">Cargo Details</h6>
+
+      <!-- Cargo type -->
+      <div class="row g-3 align-items-end">
+        <!-- <div class="col-lg-3 col-md-4 col-sm-6">
+          <label class="form-label"
+            >Cargo Type<span class="text-danger">*</span></label
+          >
+          <div class="input-icon-select">
+            <i class="bi bi-diagram-3"></i>
+            <select class="form-select" formControlName="cargo_type">
+              <option value="">Select</option>
+              <option *ngFor="let k of cargoTypeKeys" [value]="k">
+                {{ cargoTypes[k] }}
+              </option>
+            </select>
+          </div>
+        </div> -->
+
+        <!-- Line No -->
+        <div class="col-lg-3 col-md-4 col-sm-7">
+          <label class="form-label"
+            >Cargo<span class="text-danger">*</span></label
+          >
+          <div class="input-icon-select">
+            <i class="bi bi-list-ol"></i>
+            <select class="form-select" formControlName="cargo_type">
+              <option value="">Select Cargo</option>
+              <option *ngFor="let ln of lineOptions" [value]="ln.cargoCd">
+                {{ ln.cargoCd }} - {{ ln.cargoDesc }}
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Add Button -->
+        <div class="col-auto">
+          <button
+            class="btn btn-success btn-sm"
+            type="button"
+            (click)="addCargoRow()"
+          >
+            <i class="bi bi-plus-lg"></i> Add
+          </button>
+        </div>
+
+        <!-- Table -->
+        <div
+          class="col table-responsive"
+          style="max-height: calc(2 * 2.5rem + 1px); overflow-y: auto"
+        >
+          <table class="table table-bordered mb-0">
+            <thead>
+              <tr>
+                <th class="sticky-header">SL.</th>
+                <th class="sticky-header">Cargo</th>
+                <th class="sticky-header">Description</th>
+                <th class="sticky-header">Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let r of addedCargoRows; let i = index">
+                <td>{{ r.sl }}</td>
+                <td>{{ r.cargoCode }}</td>
+                <td>{{ r.cargoDesc }}</td>
+                <td>
+                  <button
+                    class="btn btn-outline-danger btn-sm"
+                    type="button"
+                    (click)="removeCargoRow(i)"
+                  >
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </td>
+              </tr>
+
+              <tr *ngIf="addedCargoRows.length === 0">
+                <td colspan="5" class="text-center small text-muted">
+                  No cargo rows added
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===========================
+       SECTION: FILE UPLOAD
+       =========================== -->
+  <div class="card shadow-sm mb-3">
+    <div class="card-body py-2">
+      <h6 class="fw-bold mb-3">Upload Documents & Remarks</h6>
+
+      <div class="row g-3">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <label class="form-label"
+            >Upload Licence File<span class="text-danger">*</span></label
+          >
+          <div class="input-icon">
+            <i class="bi bi-file-earmark-arrow-up"></i>
+            <input
+              type="file"
+              #fileInput
+              class="form-control"
+              accept="application/pdf"
+              (change)="onFileChange($event)"
+              fileSize
+            />
+          </div>
+          <small class="text-muted d-block mt-1">
+            File must be <strong>PDF only</strong> and max <strong>2MB</strong>.
+          </small>
+          <small class="text-danger" *ngIf="fileError">{{ fileError }}</small>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <label class="form-label"
+            >Pdf Description<span class="text-danger">*</span></label
+          >
+          <textarea
+            class="form-control"
+            rows="2"
+            formControlName="pdf_desc"
+            minlength="5"
+            maxlength="30"
+            placeholder="Enter PDF Description (5 to 30 characters)"
+            noCopyPaste
+            remarksInput
+          ></textarea>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <label class="form-label"
+            >Remarks<span class="text-danger">*</span></label
+          >
+          <textarea
+            class="form-control"
+            rows="2"
+            formControlName="party_remarks"
+            minlength="5"
+            maxlength="200"
+            placeholder="Enter remarks (5 to 200 characters)"
+            noCopyPaste
+            remarksInput
+            noCopyPaste
+            remarksInput
+          ></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===========================
+       FOOTER BUTTONS
+       =========================== -->
+  <div class="action-bar text-center py-3 mb-4">
+    <button
+      class="btn btn-success btn-sm px-4 me-2"
+      (click)="saveForm()"
+      [disabled]="saving"
+    >
+      <i class="bi bi-check2-circle me-1"></i> Save
+    </button>
+
+    <button
+      class="btn btn-outline-secondary btn-sm px-4"
+      (click)="clearForm()"
+      [disabled]="saving"
+    >
+      <i class="bi bi-x-circle me-1"></i> Clear
+    </button>
+  </div>
+
+  <!-- Hidden Trigger Buttons -->
+  <button
+    id="openSuccessModalBtn"
+    type="button"
+    class="d-none"
+    data-bs-toggle="modal"
+    data-bs-target="#suc"
+  ></button>
+  <button
+    id="openFailedModalBtn"
+    type="button"
+    class="d-none"
+    data-bs-toggle="modal"
+    data-bs-target="#fail"
+  ></button>
+  <button
+    id="openMissingModalBtn"
+    type="button"
+    class="d-none"
+    data-bs-toggle="modal"
+    data-bs-target="#miss"
+  ></button>
+
+  <!-- Success Modal -->
+  <div
+    class="modal fade"
+    id="suc"
+    tabindex="-1"
+    aria-hidden="true"
+    data-bs-backdrop="static"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title">Success</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            (click)="clearFormAfterSave()"
+          ></button>
+        </div>
+
+        <div class="modal-body">
+          <p><strong>Status:</strong> {{ modalData.status }}</p>
+          <p><strong>Message:</strong> {{ modalData.msg }}</p>
+          <p>
+            <strong>Application No: </strong>
+            <span class="text-monospace">{{ modalData.app_no }}</span>
+          </p>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-success" data-bs-dismiss="modal" (click)="clearFormAfterSave()">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Failed Modal -->
+  <div
+    class="modal fade"
+    id="fail"
+    tabindex="-1"
+    aria-hidden="true"
+    data-bs-backdrop="static"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title">Failed</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+          ></button>
+        </div>
+
+        <div class="modal-body">
+          <p><strong>Status:</strong> {{ modalData.status }}</p>
+          <p><strong>Message:</strong> {{ modalData.msg }}</p>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Missing Fields Modal -->
+  <div
+    class="modal fade"
+    id="miss"
+    tabindex="-1"
+    aria-hidden="true"
+    data-bs-backdrop="static"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-warning">
+          <h5 class="modal-title">Missing Fields</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+          ></button>
+        </div>
+
+        <div class="modal-body">
+          <p>Please fill the following required fields:</p>
+          <ul>
+            <li *ngFor="let f of missingFields">{{ f }}</li>
+          </ul>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-warning" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

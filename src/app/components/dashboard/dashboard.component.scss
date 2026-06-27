@@ -1,0 +1,604 @@
+.dashboard-container {
+  min-height: 100vh;
+
+  /* Ensure top-cards content is above background */
+  .dashboard-container > .top-cards {
+    position: relative;
+    z-index: 1; /* normal content stacking */
+  }
+
+  .uniform-top-row {
+    min-height: 80px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &.shrink {
+    .top-cards {
+      .row.g-3 > .col-md-2,
+      .row.g-3 > .col-6 {
+        flex: 0 0 16.6% !important;
+        max-width: 16.6% !important;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .card {
+        transform: scale(0.78);
+        opacity: 0.85;
+        height: 85px !important;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        padding: 0.25rem !important;
+        border-radius: 12px;
+        position: relative;
+
+        .card-header,
+        .card-count,
+        .card-buttons,
+        h5,
+        small {
+          display: none !important;
+        }
+
+        .card-icon {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        .card-icon i {
+          font-size: 2.4rem !important;
+        }
+      }
+
+      .row.g-3 {
+        margin-bottom: 8px !important;
+      }
+    }
+
+    .child-card-wrapper {
+      margin-top: 5px;
+    }
+  }
+
+  .row.g-3 > .col-md-2 .card {
+    border: none;
+    border-radius: 16px;
+    color: #ffffff;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background-size: 200% 200%;
+    background-position: 0% 50%;
+
+    h5 {
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    small {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    &:hover {
+      transform: scale(1.04);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      animation: glowMove 4s linear infinite;
+    }
+
+    @keyframes glowMove {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    &.application-card {
+      background: linear-gradient(270deg, #eb9da2);
+    }
+    &.measurement-card {
+      background: linear-gradient(270deg, #f0b884);
+    }
+    &.renewal-card {
+      background: linear-gradient(270deg, #e8e6a5);
+    }
+    &.handover-card {
+      background: linear-gradient(270deg, #bbe8b5);
+    }
+    &.gis-card {
+      background: linear-gradient(270deg, #acbbe8);
+    }
+    &.party-card {
+      background: linear-gradient(270deg, #c5ace8);
+    }
+
+    .emoji-wrapper {
+      transition: transform 0.3s ease;
+    }
+
+    &:hover .emoji-wrapper {
+      transform: scale(1.15);
+    }
+  }
+
+  .dashboard-btn {
+    color: #fff;
+    border: none;
+    padding: 0.25rem 0.6rem;
+    font-weight: 600;
+    font-size: 0.7rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    background-size: 200% 200%;
+    background-position: 0% 50%;
+    position: relative !important;
+    z-index: 10;
+
+    &:hover {
+      transform: scale(1.05);
+      color: #fff;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+      animation: btnGlowMove 4s linear infinite;
+    }
+  }
+
+  @keyframes btnGlowMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .btn-application {
+    background: linear-gradient(270deg, #e4777e);
+  }
+  .btn-measurement {
+    background: linear-gradient(270deg, #d6771e);
+  }
+  .btn-renewal {
+    background: linear-gradient(270deg, #999524);
+  }
+  .btn-handover {
+    background: linear-gradient(270deg, #36a028);
+  }
+  .btn-gis {
+    background: linear-gradient(270deg, #344c92);
+  }
+  .btn-party {
+    background: linear-gradient(270deg, #6336a1);
+  }
+
+  .card.shadow-sm {
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #000;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .application,
+  .measurement,
+  .renewal,
+  .handover,
+  .gis,
+  .party {
+    font-size: 4rem;
+  }
+
+  .application {
+    color: #9b595c;
+  }
+  .measurement {
+    color: #da812e;
+  }
+  .renewal {
+    color: #8a873a;
+  }
+  .handover {
+    color: #36882b;
+  }
+  .gis {
+    color: #4268da;
+  }
+  .party {
+    color: #985fe9;
+  }
+
+  .party-details .detail-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .party-details .label {
+    text-align: left;
+  }
+  .party-details .value {
+    text-align: right;
+    font-weight: 600;
+  }
+
+  .application-stats {
+    margin-top: 4px;
+
+    .stat-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      padding-left: 8px;
+      padding-right: 4px;
+    }
+
+    .label {
+      font-weight: 400;
+      opacity: 0.85;
+      flex-shrink: 0;
+    }
+
+    .value {
+      font-weight: 400;
+      color: inherit;
+    }
+  }
+
+  .party-card .party-details {
+    padding: 4px 8px;
+    border-radius: 6px;
+    line-height: 0.95rem;
+    width: 100%;
+    backdrop-filter: blur(3px);
+
+    div {
+      margin-bottom: 3px;
+      word-break: break-word;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .row.g-3 > .col-md-2 {
+      flex: 0 0 33.33%;
+      max-width: 33.33%;
+    }
+    .card-icon i {
+      font-size: 3.2rem !important;
+    }
+    .application-stats .stat-item {
+      font-size: 0.7rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .row.g-3 > .col-md-2 {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+    .card {
+      padding: 0.9rem;
+    }
+    .card-icon i {
+      font-size: 2.8rem !important;
+    }
+    .application-stats .stat-item {
+      font-size: 0.68rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .row.g-3 > .col-md-2 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    .card-icon i {
+      font-size: 2.4rem !important;
+    }
+    h5 {
+      font-size: 0.85rem;
+    }
+    .application-stats .stat-item {
+      font-size: 0.62rem;
+    }
+  }
+
+  .notif-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #ff3b30;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 1;
+    min-width: 18px;
+    text-align: center;
+    animation: notifPulse 1.4s infinite ease-in-out;
+    pointer-events: none;
+    z-index: 20;
+  }
+
+  @keyframes notifPulse {
+    0% {
+      box-shadow: 0 0 4px rgba(255, 0, 0, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 12px rgba(255, 0, 0, 1);
+    }
+    100% {
+      box-shadow: 0 0 4px rgba(255, 0, 0, 0.5);
+    }
+  }
+
+  /* ------------------------------------------------------------
+     🔥 ADDED: Deep Glow + Richer Icon Colors (matches card color)
+     ------------------------------------------------------------ */
+
+  .card-icon img {
+    filter: brightness(0.6) saturate(1.4)
+      drop-shadow(0 0 6px rgba(255, 255, 255, 0.35));
+    transition: all 0.25s ease-in-out;
+  }
+
+  /* Hover Glow Matches Each Card Color */
+  .application-card .card-icon img:hover {
+    filter: brightness(1.1) saturate(1.8)
+      drop-shadow(0 0 10px rgba(235, 157, 162, 0.9));
+  }
+
+  .measurement-card .card-icon img:hover {
+    filter: brightness(1.1) saturate(1.8)
+      drop-shadow(0 0 10px rgba(240, 184, 132, 0.9));
+  }
+
+  .renewal-card .card-icon img:hover {
+    filter: brightness(1.1) saturate(1.8)
+      drop-shadow(0 0 10px rgba(232, 230, 165, 0.9));
+  }
+
+  .handover-card .card-icon img:hover {
+    filter: brightness(1.1) saturate(1.8)
+      drop-shadow(0 0 10px rgba(187, 232, 181, 0.9));
+  }
+
+  .gis-card .card-icon img:hover {
+    filter: brightness(1.1) saturate(1.8)
+      drop-shadow(0 0 10px rgba(172, 187, 232, 0.9));
+  }
+
+  .party-card .card-icon img:hover {
+    filter: brightness(1.1) saturate(1.8)
+      drop-shadow(0 0 10px rgba(135, 88, 200, 0.9));
+  }
+}
+
+.floating-video {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 320px;
+  height: 180px;
+  background: #000;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.floating-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-controls {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  gap: 6px;
+  z-index: 10;
+}
+
+.video-controls button {
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+.video-placeholder {
+  height: 100%;
+  width: 100%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  background: #111;
+}
+
+.video-placeholder.error {
+  color: #ffb3b3;
+}
+
+/* 🎥 Floating Mini Player */
+.floating-video {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 320px;
+  height: 180px;
+  background: #000;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.floating-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 🔥 prevents black overflow */
+  background: #000;
+}
+
+/* 🎬 Theater Mode (Centered, Limited Size) */
+.floating-video.theater {
+  width: min(90vw, 1000px); /* responsive width */
+  aspect-ratio: 16 / 9; /* 🔥 KEY FIX */
+  height: auto;
+
+  bottom: 50%;
+  right: 50%;
+  transform: translate(50%, 50%);
+
+  border-radius: 14px;
+}
+
+/* 🎛 Controls */
+.video-controls {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: flex;
+  gap: 6px;
+  z-index: 10;
+}
+
+/* ⏳ Placeholder */
+.video-placeholder {
+  height: 100%;
+  width: 100%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  background: #111;
+}
+
+.video-placeholder.error {
+  color: #ffb3b3;
+}
+
+//Special Section
+/* 🍔 Burger Button */
+.video-burger {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 35px;
+  height: 35px;
+  background: #1effec;
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 9999;
+
+  /* 🔥 Glow effect */
+  box-shadow:
+    0 0 10px rgba(255, 255, 255, 0.9),
+    0 0 20px rgba(255, 255, 255, 0.6),
+    0 0 35px rgba(255, 255, 255, 0.4);
+
+  animation: glowPulse 1.8s infinite ease-in-out;
+}
+
+@keyframes glowPulse {
+  /* 🔴 Red glow */
+  0% {
+    box-shadow:
+      0 0 8px rgba(255, 80, 80, 0.7),
+      0 0 18px rgba(255, 80, 80, 0.5),
+      0 0 30px rgba(255, 80, 80, 0.35);
+    transform: scale(1);
+  }
+
+  /* 🟢 Green glow */
+  33% {
+    box-shadow:
+      0 0 12px rgba(80, 255, 160, 0.8),
+      0 0 26px rgba(80, 255, 160, 0.6),
+      0 0 42px rgba(80, 255, 160, 0.4);
+    transform: scale(1.06);
+  }
+
+  /* 🔵 Blue glow */
+  66% {
+    box-shadow:
+      0 0 14px rgba(80, 160, 255, 0.85),
+      0 0 30px rgba(80, 160, 255, 0.65),
+      0 0 48px rgba(80, 160, 255, 0.45);
+    transform: scale(1.08);
+  }
+
+  /* 🔴 Back to Red */
+  100% {
+    box-shadow:
+      0 0 8px rgba(255, 80, 80, 0.7),
+      0 0 18px rgba(255, 80, 80, 0.5),
+      0 0 30px rgba(255, 80, 80, 0.35);
+    transform: scale(1);
+  }
+}
+
+.video-burger::after {
+  content: "👇";
+  position: absolute;
+  top: -32px; /* 👈 move above the icon */
+  font-size: 22px;
+  animation: handPointTop 1.2s infinite ease-in-out;
+}
+
+@keyframes handPointTop {
+  0% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(8px); /* 👈 move DOWN towards icon */
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+}
+
+.floating-video.theater .video-placeholder {
+  font-size: 15px;
+}
+
+.floating-video.theater {
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+  .floating-video.theater {
+    width: 95vw;
+    aspect-ratio: 16 / 9;
+  }
+}

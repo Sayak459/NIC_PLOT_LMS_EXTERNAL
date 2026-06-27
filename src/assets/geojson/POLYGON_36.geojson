@@ -1,0 +1,46 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[88.3022939897487,22.5455065242359],[88.3022570787694,22.5455433623089],[88.3021181252612,22.5454312098914],[88.302155618339,22.5453948416661],[88.3022939897487,22.5455065242359]]]},"properties": {
+    "floor": "ground","fill-opacity":0,"stroke-opacity":1,"stroke":"#ff0000","ID":"36-2","REMARKS":"POLYGON ID-36","AREA":105.202}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[88.3022570787694,22.5455433623089],[88.3022201677706,22.5455802003741],[88.3020806321638,22.5454675781087],[88.3021181252612,22.5454312098914],[88.3022570787694,22.5455433623089]]]},"properties": {
+    "floor": "ground","fill-opacity":0,"stroke-opacity":1,"stroke":"#ff0000","ID":"36-1","REMARKS":"POLYGON ID-36","AREA":105.644}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[88.3023678116487,22.5454328480669],[88.3023309007085,22.5454696861553],[88.3021931113971,22.5453584734328],[88.3022306044357,22.5453221051916],[88.3023678116487,22.5454328480669]]]},"properties": {
+    "floor": "ground","fill-opacity":0,"stroke-opacity":1,"stroke":"#ff0000","ID":"36-4","REMARKS":"POLYGON ID-36","AREA":104.319}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[88.3023309007085,22.5454696861553],[88.3022939897487,22.5455065242359],[88.302155618339,22.5453948416661],[88.3021931113971,22.5453584734328],[88.3023309007085,22.5454696861553]]]},"properties": {
+    "floor": "ground","fill-opacity":0,"stroke-opacity":1,"stroke":"#ff0000","ID":"36-3","REMARKS":"POLYGON ID-36","AREA":104.761}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[88.3024416334706,22.5453591718671],[88.3024047225694,22.5453960099709],[88.3022680974546,22.5452857369424],[88.3023055904539,22.5452493686852],[88.3024416334706,22.5453591718671]]]},"properties": {
+    "floor": "ground","fill-opacity":0,"stroke-opacity":1,"stroke":"#ff0000","ID":"36-6","REMARKS":"POLYGON ID-36","AREA":103.436}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[88.3024047225694,22.5453960099709],[88.3023678116487,22.5454328480669],[88.3022306044357,22.5453221051916],[88.3022680974546,22.5452857369424],[88.3024047225694,22.5453960099709]]]},"properties": {
+    "floor": "ground","fill-opacity":0,"stroke-opacity":1,"stroke":"#ff0000","ID":"36-5","REMARKS":"POLYGON ID-36","AREA":103.877}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[88.3025154552143,22.5452854956364],[88.3024785443522,22.5453223337556],[88.3023430834336,22.54521300042],[88.3023805763937,22.5451766321468],[88.3025154552143,22.5452854956364]]]},"properties": {
+    "floor": "ground","fill-opacity":0,"stroke-opacity":1,"stroke":"#ff0000","ID":"36-8","REMARKS":"POLYGON ID-36","AREA":102.552}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[88.3024785443522,22.5453223337556],[88.3024416334706,22.5453591718671],[88.3023055904539,22.5452493686852],[88.3023430834336,22.54521300042],[88.3024785443522,22.5453223337556]]]},"properties": {
+    "floor": "ground","fill-opacity":0,"stroke-opacity":1,"stroke":"#ff0000","ID":"36-7","REMARKS":"POLYGON ID-36","AREA":102.994}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[88.30258927688,22.5452118193749],[88.3025523660569,22.5452486575095],[88.3024180693342,22.5451402638657],[88.3024555622551,22.5451038955766],[88.30258927688,22.5452118193749]]]},"properties": {
+    "floor": "ground","fill-opacity":0,"stroke-opacity":1,"stroke":"#ff0000","ID":"36-10","REMARKS":"POLYGON ID-36","AREA":101.669}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[88.3025523660569,22.5452486575095],[88.3025154552143,22.5452854956364],[88.3023805763937,22.5451766321468],[88.3024180693342,22.5451402638657],[88.3025523660569,22.5452486575095]]]},"properties": {
+    "floor": "ground","fill-opacity":0,"stroke-opacity":1,"stroke":"#ff0000","ID":"36-9","REMARKS":"POLYGON ID-36","AREA":102.111}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[88.3026630984675,22.5451381430826],[88.3026261876835,22.5451749812326],[88.3024930551563,22.5450675272796],[88.302530548038,22.5450311589745],[88.3026630984675,22.5451381430826]]]},"properties": {
+    "floor": "ground","fill-opacity":0,"stroke-opacity":1,"stroke":"#ff0000","ID":"36-12","REMARKS":"POLYGON ID-36","AREA":100.786}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[88.3026261876835,22.5451749812326],[88.30258927688,22.5452118193749],[88.3024555622551,22.5451038955766],[88.3024930551563,22.5450675272796],[88.3026261876835,22.5451749812326]]]},"properties": {
+    "floor": "ground","fill-opacity":0,"stroke-opacity":1,"stroke":"#ff0000","ID":"36-11","REMARKS":"POLYGON ID-36","AREA":101.228}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[88.3027369199769,22.5450644667593],[88.3027000092319,22.5451013049248],[88.3025680409,22.5449947906615],[88.3026055337424,22.5449584223405],[88.3027369199769,22.5450644667593]]]},"properties": {
+    "floor": "ground","fill-opacity":0,"stroke-opacity":1,"stroke":"#ff0000","ID":"36-14","REMARKS":"POLYGON ID-36","AREA":99.903}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[88.3027000092319,22.5451013049248],[88.3026630984675,22.5451381430826],[88.302530548038,22.5450311589745],[88.3025680409,22.5449947906615],[88.3027000092319,22.5451013049248]]]},"properties": {
+    "floor": "ground","fill-opacity":0,"stroke-opacity":1,"stroke":"#ff0000","ID":"36-13","REMARKS":"POLYGON ID-36","AREA":100.344}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[88.3028107414082,22.5449907904053],[88.3027738307023,22.5450276285862],[88.3026430265652,22.5449220540116],[88.3026805193685,22.5448856856746],[88.3028107414082,22.5449907904053]]]},"properties": {
+    "floor": "ground","fill-opacity":0,"stroke-opacity":1,"stroke":"#ff0000","ID":"36-16","REMARKS":"POLYGON ID-36","AREA":99.019}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[88.3027738307023,22.5450276285862],[88.3027369199769,22.5450644667593],[88.3026055337424,22.5449584223405],[88.3026430265652,22.5449220540116],[88.3027738307023,22.5450276285862]]]},"properties": {
+    "floor": "ground","fill-opacity":0,"stroke-opacity":1,"stroke":"#ff0000","ID":"36-15","REMARKS":"POLYGON ID-36","AREA":99.461}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[88.3028845627614,22.5449171140204],[88.3028476520945,22.5449539522167],[88.302718012152,22.5448493173297],[88.302755504916,22.5448129489769],[88.3028845627614,22.5449171140204]]]},"properties": {
+    "floor": "ground","fill-opacity":0,"stroke-opacity":1,"stroke":"#ff0000","ID":"36-18","REMARKS":"POLYGON ID-36","AREA":98.136}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[88.3028476520945,22.5449539522167],[88.3028107414082,22.5449907904053],[88.3026805193685,22.5448856856746],[88.302718012152,22.5448493173297],[88.3028476520945,22.5449539522167]]]},"properties": {
+    "floor": "ground","fill-opacity":0,"stroke-opacity":1,"stroke":"#ff0000","ID":"36-17","REMARKS":"POLYGON ID-36","AREA":98.578}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[88.3029583840365,22.5448434376047],[88.3029214734087,22.5448802758164],[88.3027929976604,22.544776580616],[88.3028304903851,22.5447402122472],[88.3029583840365,22.5448434376047]]]},"properties": {
+    "floor": "ground","fill-opacity":0,"stroke-opacity":1,"stroke":"#ff0000","ID":"36-20","REMARKS":"POLYGON ID-36","AREA":97.253}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[88.3029214734087,22.5448802758164],[88.3028845627614,22.5449171140204],[88.302755504916,22.5448129489769],[88.3027929976604,22.544776580616],[88.3029214734087,22.5448802758164]]]},"properties": {
+    "floor": "ground","fill-opacity":0,"stroke-opacity":1,"stroke":"#ff0000","ID":"36-19","REMARKS":"POLYGON ID-36","AREA":97.695}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[88.3028679830903,22.5447038438704],[88.3029054757758,22.5446674754856],[88.3030282988251,22.5447736599094],[88.3029952946447,22.5448065993852],[88.3028679830903,22.5447038438704]]]},"properties": {
+    "floor": "ground","fill-opacity":0,"stroke-opacity":1,"stroke":"#ff0000","ID":"36-22","REMARKS":"POLYGON ID-36","AREA":91.282}},
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[88.3029952946447,22.5448065993852],[88.3029583840365,22.5448434376047],[88.3028304903851,22.5447402122472],[88.3028679830903,22.5447038438704],[88.3029952946447,22.5448065993852]]]},"properties": {
+    "floor": "ground","fill-opacity":0,"stroke-opacity":1,"stroke":"#ff0000","ID":"36-21","REMARKS":"POLYGON ID-36","AREA":96.811}}
+]}

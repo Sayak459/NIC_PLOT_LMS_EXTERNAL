@@ -1,0 +1,111 @@
+canvas {
+  background: #f8f9fa; /* light dashboard background */
+  border-radius: 8px;
+}
+
+.pie-chart-wrapper {
+  width: 100%;
+  max-width: 340px;
+  height: 290px;
+  margin: auto;
+  position: relative;
+}
+.pie-chart-wrapper canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.dashboard-container {
+  padding: 1rem;
+}
+
+.chart-box {
+  width: 100%;
+  padding: 1rem;
+  background: #ffffff;
+  box-shadow: 0px 2px 6px rgba(53, 26, 26, 0.1);
+  border-radius: 10px;
+  overflow: hidden; /* ensure content stays inside */
+}
+
+/* Title */
+.title {
+  font-weight: 700;
+  color: #2d6cdf;
+  margin-bottom: 1rem;
+}
+
+/* Auto-scrolling table container */
+.auto-scroll-table {
+  max-height: 215px;
+  overflow: hidden;
+  overflow-x: auto; /* <-- FIX: horizontal scroll enabled */
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Table layout */
+.auto-scroll-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.auto-scroll-table:hover .scroll-content {
+  animation-play-state: paused; // ❌ pause animation on hover
+}
+
+.auto-scroll-table thead {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  position: sticky;
+  top: 0;
+  background: #343a40;
+  color: #fff;
+  z-index: 2;
+}
+
+.auto-scroll-table tbody.scroll-content {
+  display: block;
+  width: 100%;
+}
+
+.scroll-1 {
+  animation: scroll-up 30s linear infinite;
+}
+.scroll-2 {
+  animation: scroll-up 90s linear infinite;
+}
+
+.auto-scroll-table tbody.scroll-content tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+/* Cell styling */
+.auto-scroll-table td,
+.auto-scroll-table th {
+  white-space: nowrap; /* Prevent text wrapping */
+  text-overflow: ellipsis; /* Show "..." for long text */
+  overflow: hidden;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .auto-scroll-table td,
+  .auto-scroll-table th {
+    padding: 0.25rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Auto-scroll keyframe */
+@keyframes scroll-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}

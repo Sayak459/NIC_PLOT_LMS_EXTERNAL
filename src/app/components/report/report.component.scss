@@ -1,0 +1,80 @@
+/* Report Container Card */
+.report-container {
+  max-width: 420px;
+  margin: 40px auto;
+  background: #ffffff;
+  border-radius: 0.6rem;
+  border: 1px solid #198754; /* match dashboard green */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 20px 22px;
+}
+
+/* Heading */
+.report-container h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #198754;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+/* Labels */
+label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: #334155;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 0.82rem;
+  border-radius: 0.35rem;
+  border: 1px solid #cbd5f1;
+  transition: all 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #198754;
+  box-shadow: 0 0 0 2px rgba(25, 135, 84, 0.15);
+}
+
+/* Spacing between fields */
+.report-field {
+  margin-bottom: 12px;
+}
+
+/* Button */
+button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 7px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: 0.4rem;
+  border: none;
+  background-color: #198754;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: #157347;
+}
+
+button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Error Message */
+.error {
+  color: #dc3545;
+  font-size: 0.78rem;
+  margin-top: 10px;
+  text-align: center;
+}

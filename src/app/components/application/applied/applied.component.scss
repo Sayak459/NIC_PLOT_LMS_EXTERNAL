@@ -1,0 +1,309 @@
+//Back Button
+.btn {
+  height: 30px;
+  width: 100px;
+  padding: auto;
+}
+
+/* Modern Back Button */
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  height: 34px;
+  padding: 0 14px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: linear-gradient(135deg, #198754, #20c997);
+  color: white;
+
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  box-shadow: 0 2px 6px rgba(25, 135, 84, 0.25);
+  transition: all 0.2s ease;
+
+  cursor: pointer;
+}
+
+/* Icon sizing */
+.btn-back i {
+  font-size: 0.9rem;
+}
+
+/* Hover effect */
+.btn-back:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(25, 135, 84, 0.35);
+  background: linear-gradient(135deg, #157347, #1aa179);
+}
+
+/* Click effect */
+.btn-back:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Shared dashboard table design */
+.dashboard-table-wrap {
+  /* Scroll container */
+  .table-area {
+    max-width: 98%;
+    max-height: 51vh;
+    overflow-y: auto;
+    overflow-x: auto;
+    margin: 0 auto;
+
+    background: #ffffff;
+    border-radius: 0.6rem;
+    border: 1px solid #198754; /* Match green theme */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Table styling */
+  table.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem; /* matches import-app table size */
+    color: #334155;
+  }
+
+  /* Table header */
+  table.table th {
+    font-weight: 600;
+    background-color: #e8f8ef !important; /* soft green like nav active */
+    color: #198754;
+    white-space: nowrap;
+    text-align: center;
+    vertical-align: middle;
+    padding: 8px;
+  }
+
+  /* Table rows */
+  table.table td {
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    padding: 8px;
+  }
+
+  /* Even rows */
+  table.table tbody tr:nth-child(even) {
+    background-color: #f9fbfd !important; /* match import page BG */
+  }
+
+  /* Odd rows */
+  table.table tbody tr:nth-child(odd) {
+    background-color: #ffffff !important;
+  }
+
+  /* Hover highlight */
+  table.table tbody tr:hover {
+    background-color: #e8f0ff !important;
+    cursor: pointer;
+  }
+
+  /* Sticky header */
+  thead.sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  /* Badge styling */
+  .badge {
+    padding: 0.35em 0.55em;
+    font-size: 0.78rem;
+    border-radius: 0.4rem;
+  }
+
+  // Sortable column indicator
+  .sortable {
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+  }
+
+  .sortable::after {
+    content: "⇅";
+    font-size: 0.7rem;
+    margin-left: 6px;
+    opacity: 0.4;
+  }
+
+  .sortable.active-asc::after {
+    content: "▲";
+    opacity: 1;
+  }
+
+  .sortable.active-desc::after {
+    content: "▼";
+    opacity: 1;
+  }
+}
+
+.table-scroll {
+  overflow-x: auto; /* enable horizontal scroll */
+  overflow-y: auto; /* optional vertical scroll */
+  position: relative; /* sticky will be relative to this */
+}
+
+.sticky-update-cell {
+  position: sticky;
+  right: 0;
+  background: #ffffff; /* same as table bg */ /* higher than table rows */
+  min-width: 20px; /* ensure button doesn’t shrink too much */
+  text-align: center;
+}
+
+.floating-update {
+  padding: 0.2rem 0.4rem; /* reduce button padding */
+  font-size: 0.7rem; /* smaller text */
+  min-width: 50px; /* optional: keep a minimum width */
+}
+
+.import-app {
+  background-color: #f9fbfd;
+  min-height: 100vh;
+  color: #334155;
+
+  .vessel-row .col-lg-2,
+  .vessel-row .col-md-3,
+  .vessel-row .col-sm-4 {
+    margin-bottom: 0.4rem;
+  }
+
+  .btn-get {
+    border-radius: 0.4rem;
+    height: 38px; // same height as input + save button
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  .card {
+    border: none;
+    border-radius: 0.6rem;
+    background: #fff;
+  }
+
+  .form-label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #334155;
+  }
+
+  .input-icon,
+  .input-icon-select,
+  .input-icon-textarea {
+    position: relative;
+  }
+
+  .input-icon i,
+  .input-icon-select i,
+  .input-icon-textarea i {
+    position: absolute;
+    top: 40%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #198754;
+    font-size: 0.9rem;
+    z-index: 2;
+  }
+
+  .input-icon input,
+  .input-icon-select select,
+  .input-icon-textarea textarea {
+    padding-left: 2rem !important;
+  }
+
+  .nav-tabs .nav-link {
+    font-size: 0.8rem;
+    color: #444;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+
+  .nav-tabs .nav-link.active {
+    background-color: #e8f8ef;
+    color: #198754;
+    font-weight: 600;
+  }
+
+  .table th,
+  .table td {
+    font-size: 0.78rem;
+    vertical-align: middle;
+  }
+
+  .table th {
+    background-color: #f1f5f9;
+    color: #334155;
+    font-weight: 600;
+  }
+
+  .btn {
+    border-radius: 0.4rem;
+    font-size: 0.8rem;
+  }
+
+  .btn i {
+    font-size: 0.9rem;
+    vertical-align: middle;
+  }
+
+  .btn-success {
+    background-color: #198754;
+    border-color: #198754;
+  }
+
+  .btn-success:hover {
+    background-color: #157347;
+  }
+
+  .btn-outline-success {
+    border-color: #198754;
+    color: #198754;
+  }
+
+  .btn-outline-success:hover {
+    background-color: #198754;
+    color: #fff;
+  }
+
+  .header i {
+    font-size: 1.3rem;
+    color: #198754;
+  }
+
+  .action-bar {
+    background-color: #f1f5f9;
+    border-top: 1px solid #dee2e6;
+    position: sticky;
+    bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    .form-label {
+      font-size: 0.75rem;
+    }
+    .btn {
+      font-size: 0.75rem;
+    }
+  }
+}
+
+/* Add in your component SCSS or global styles */
+.btn-icon-sm {
+  padding: 0.25rem 0.4rem; /* smaller padding */
+  font-size: 1.2rem; /* smaller icon size */
+  width: 28px; /* fixed square buttons */
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.download-section span {
+  font-size: 0.85rem; /* slightly smaller label */
+}

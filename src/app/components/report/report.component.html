@@ -1,0 +1,22 @@
+<div class="report-container">
+  <h2>Generate Report</h2>
+
+  <form [formGroup]="reportForm" (ngSubmit)="generateReport()">
+    <div class="report-field">
+      <label>Application Number *</label>
+      <input
+        type="text"
+        formControlName="app_no"
+        placeholder="Enter Application No"
+      />
+    </div>
+
+    <button type="submit" [disabled]="loading">
+      {{ loading ? "Generating..." : "Generate Report" }}
+    </button>
+  </form>
+
+  <div *ngIf="errorMessage" class="error">
+    {{ errorMessage }}
+  </div>
+</div>

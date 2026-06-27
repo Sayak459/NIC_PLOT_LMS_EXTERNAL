@@ -1,0 +1,142 @@
+/* Modern Back Button */
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  height: 34px;
+  padding: 0 14px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: linear-gradient(135deg, #198754, #20c997);
+  color: white;
+
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  box-shadow: 0 2px 6px rgba(25, 135, 84, 0.25);
+  transition: all 0.2s ease;
+
+  cursor: pointer;
+}
+
+/* Icon sizing */
+.btn-back i {
+  font-size: 0.9rem;
+}
+
+/* Hover effect */
+.btn-back:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(25, 135, 84, 0.35);
+  background: linear-gradient(135deg, #157347, #1aa179);
+}
+
+/* Click effect */
+.btn-back:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.import-app {
+  background-color: #f9fbfd;
+  min-height: 40vh;
+  color: #334155;
+
+  .readonly-field {
+    background-color: #f8f9fa !important;
+    pointer-events: none;
+  }
+
+  .card {
+    border-radius: 0.6rem;
+    border: none;
+    background: #fff;
+  }
+
+  .info-card {
+    border-left: 4px solid #198754;
+  }
+
+  .form-label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #334155;
+  }
+
+  .input-icon,
+  .input-icon-select,
+  .input-icon-textarea {
+    position: relative;
+
+    i {
+      position: absolute;
+      top: 40%;
+      left: 10px;
+      transform: translateY(-50%);
+      color: #198754;
+      font-size: 0.9rem;
+      z-index: 2;
+    }
+
+    input,
+    select,
+    textarea {
+      padding-left: 2rem !important;
+    }
+  }
+
+  .header i {
+    font-size: 1.3rem;
+    color: #198754;
+  }
+
+  .action-bar {
+    background-color: #f1f5f9;
+    border-top: 1px solid #dee2e6;
+    position: sticky;
+    bottom: 0;
+  }
+
+  button {
+    min-width: 100px;
+    border-radius: 0.4rem;
+    font-size: 0.8rem;
+
+    i {
+      font-size: 0.9rem;
+      vertical-align: middle;
+    }
+  }
+
+  .btn-success {
+    background-color: #198754;
+    border-color: #198754;
+
+    &:hover {
+      background-color: #157347;
+    }
+  }
+
+  .btn-outline-success {
+    border-color: #198754;
+    color: #198754;
+
+    &:hover {
+      background-color: #198754;
+      color: #fff;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .form-label {
+      font-size: 0.75rem;
+    }
+
+    button {
+      font-size: 0.75rem;
+    }
+  }
+}

@@ -1,0 +1,133 @@
+/* ✅ Universal Table Alignment Rules */
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th,
+  td {
+    vertical-align: middle;
+    padding: 0.5rem 0.75rem;
+  }
+
+  /* Left-align text and alphanumeric by default */
+  th,
+  td {
+    text-align: left;
+  }
+
+  /* Center align dates */
+  th[data-type="date"],
+  td[data-type="date"],
+  th.date-col,
+  td.date-col {
+    text-align: center;
+  }
+
+  /* Right align numeric values */
+  th[data-type="number"],
+  td[data-type="number"],
+  th.num-col,
+  td.num-col {
+    text-align: right;
+  }
+}
+/* Compact Legend */
+.info.legend {
+  background: #f3f4f6;
+  border: 1px solid #d0d7e1;
+  border-radius: 6px;
+  padding: 6px 10px;
+  width: 180px; /* MUCH smaller */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 12px;
+  color: #333;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.legend-item:last-child {
+  margin-bottom: 0;
+}
+
+.legend-box {
+  width: 14px; /* smaller */
+  height: 14px; /* smaller */
+  border-radius: 3px;
+  margin-right: 6px;
+  border: 1px solid #999;
+  opacity: 0.9;
+}
+
+/* Colors */
+.legend-occupied {
+  background-color: #e74c3c;
+}
+
+.legend-vacant {
+  background-color: #27ae60;
+}
+
+.legend-hold {
+  background-color: #3498db;
+}
+
+.gis-disclaimer {
+  width: 360px; /* keeps it rectangular */
+  padding: 10px 14px;
+  background: #f3f4f6;
+  border: 1px solid #d0d7e1;
+  border-radius: 8px;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 13px;
+  color: #333;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  line-height: 1.35;
+}
+
+.gis-disclaimer-title {
+  font-weight: 700;
+  display: block; /* puts title on its own line */
+  margin-bottom: 3px;
+  color: #c0392b;
+}
+
+.gis-disclaimer-text {
+  display: block;
+}
+.block-label {
+  color: rgb(255, 255, 255); /* text color */
+  font-size: 8px; /* reduce font size */
+  font-weight: bold;
+  padding: 2px 4px; /* adjust padding */
+  border-radius: 4px; /* optional rounded corners */
+  text-align: center; /* center text */
+  white-space: nowrap; /* keep in one line */
+  display: flex;
+  align-items: left;
+  justify-content: center;
+}
+
+/* Make Bootstrap Modal appear on top of everything */
+.modal {
+  z-index: 99999 !important;
+}
+
+.modal-backdrop {
+  z-index: 99998 !important;
+}
+
+body {
+  background: url("assets/ship.png") center / cover no-repeat fixed;
+}
+
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.35);
+}

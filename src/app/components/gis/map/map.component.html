@@ -1,0 +1,150 @@
+<div
+  class="card shadow-sm header mb-3 mt-3 d-flex align-items-center justify-content-center position-relative"
+>
+  <!-- Download Icon (LEFT) -->
+  <!-- <button
+    class="btn btn-outline-success map-download-btn"
+    title="Download Map"
+    (click)="downloadMap()"
+  >
+    <i class="bi bi-download "> Download</i>
+  </button> -->
+
+  <!-- Center Heading -->
+  <h5 class="fw-bold text-success mb-0">
+    <i class="bi bi-map"></i> GIS MAP (KDS/NSD)
+  </h5>
+</div>
+
+<div
+  id="map"
+  class="map-container"
+  [ngClass]="{
+    'map-fullscreen': !isDashboardView,
+    'map-dashboard': isDashboardView,
+  }"
+>
+  <!-- 🏢 FLOOR FILTER -->
+  <div class="floor-toggle">
+    <label>
+      <input
+        type="radio"
+        name="floor"
+        value="ALL"
+        [(ngModel)]="selectedFloor"
+        (change)="onFloorChange('ALL')"
+      />
+      🏢 All Floors
+    </label>
+
+    <label>
+      <input
+        type="radio"
+        name="floor"
+        value="GROUND"
+        [(ngModel)]="selectedFloor"
+        (change)="onFloorChange('GROUND')"
+      />
+      🏠 Ground Floor
+    </label>
+
+    <label>
+      <input
+        type="radio"
+        name="floor"
+        value="FIRST"
+        [(ngModel)]="selectedFloor"
+        (change)="onFloorChange('FIRST')"
+      />
+      🏨 First Floor
+    </label>
+  </div>
+
+  <!-- 🌍 MAP TYPE SWITCHER -->
+  <div class="map-layer-toggle">
+    <button
+      [class.active]="selectedMapType === 'street'"
+      (click)="changeMapLayer('street')"
+    >
+      🗺️ Street
+    </button>
+
+    <button
+      [class.active]="selectedMapType === 'satellite'"
+      (click)="changeMapLayer('satellite')"
+    >
+      🛰️ Satellite
+    </button>
+
+    <button
+      [class.active]="selectedMapType === 'terrain'"
+      (click)="changeMapLayer('terrain')"
+    >
+      🏔️ Terrain
+    </button>
+  </div>
+
+  <div class="map-search-box">
+    <div class="search-container" style="position: relative">
+      <input
+        type="text"
+        placeholder="Enter Shed/Yard Name/Code"
+        #searchInput
+        (input)="
+          updateSuggestions(searchInput.value); searchBlock(searchInput.value)
+        "
+        autocomplete="off"
+      />
+
+      <button (click)="searchBlock(searchInput.value)">Search</button>
+
+      <!-- 🔍 SUGGESTION LIST -->
+      <ul class="search-suggestions" *ngIf="showSuggestions">
+        <li
+          *ngFor="let item of suggestions"
+          (click)="selectSuggestion(item); searchInput.value = item"
+        >
+          🔍 {{ item }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <!-- ================= FOOTER ================= -->
+  <div class="map-footer">
+    <div class="footer-item">
+      Designed & Developed by:
+      <img src="assets/nic.png" alt="Logo" class="footer-logo" />
+    </div>
+
+    <div class="footer-item">Copyright By © SMPK-KDS</div>
+  </div>
+
+  <!-- ================= DISCLAIMER ================= -->
+  <div class="gis-disclaimer-box">
+    <span class="gis-disclaimer-title">⚠️ Disclaimer:</span>
+    <span class="gis-disclaimer-text">
+      Spatial & occupancy data are indicative only.<br />
+      Not valid for legal or survey use.
+    </span>
+  </div>
+
+  <!-- ================= LEGEND ================= -->
+  <div class="map-legend">
+    <div class="legend-item">
+      <span class="legend-box legend-occupied"></span>
+      Occupied
+    </div>
+
+    <div class="legend-item">
+      <span class="legend-box legend-vacant"></span>
+      Vacant
+    </div>
+
+    <div class="legend-item">
+      <span class="legend-box legend-hold"></span>
+      Hold
+    </div>
+  </div>
+</div>

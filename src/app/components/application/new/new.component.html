@@ -1,0 +1,39 @@
+<button class="btn-back" (click)="goBack()">
+  <i class="bi bi-arrow-left"></i>
+  <span>Back</span>
+</button>
+
+<div class="container-fluid px-4 py-3">
+  <!-- Message + Buttons in One Row -->
+  <div class="d-flex align-items-center gap-2 mb-3">
+    <!-- Attractive Title -->
+
+    <div class="me-2 card" style="background-color: rgb(255, 255, 255)">
+      <h5 class="app-title fw-bold mb-2">Application Selection</h5>
+    </div>
+
+    <!-- Buttons -->
+    <button
+      class="btn nav-btn"
+      routerLink="one-month"
+      routerLinkActive="active"
+    >
+      Short Term
+    </button>
+
+    <button
+      class="btn nav-btn"
+      routerLink="eleven-month"
+      routerLinkActive="active"
+    >
+      Mid Term
+    </button>
+  </div>
+
+  <!-- Child card -->
+  <div class="card shadow-sm p-0 w-100">
+    <div class="card-body p-3">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

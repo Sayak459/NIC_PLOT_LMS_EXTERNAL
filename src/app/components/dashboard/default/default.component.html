@@ -1,0 +1,278 @@
+<div class="dashboard-container">
+  <div class="row gx-3 gy-3">
+    <!-- Chart 1 -->
+    <div class="col-md-6 col-sm-12">
+      <div class="chart-box">
+        <h6 class="text-center">
+          🚨 Expiring (Within 7 Days) & Overdue Licenses
+        </h6>
+
+        <div class="auto-scroll-table table-responsive">
+          <table class="table table-sm table-bordered table-striped mb-0">
+            <thead class="table-success">
+              <tr>
+                <th>App No</th>
+                <th>SAN</th>
+                <th>From</th>
+                <th>Upto</th>
+                <th>Days Left</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+
+            <tbody class="scroll-content scroll-1">
+              <tr *ngFor="let row of expiringList">
+                <td>{{ row.appNo }}</td>
+                <td>{{ row.san }}</td>
+                <td>{{ row.fromDate | date: "dd/MM/yyyy" }}</td>
+                <td>{{ row.uptoDate | date: "dd/MM/yyyy" }}</td>
+                <td>{{ row.remainingDays }}</td>
+                <td>
+                  <span
+                    class="badge"
+                    [ngClass]="{
+                      'bg-warning text-dark': row.status === 'Warning',
+                      'bg-danger': row.status === 'Overdue',
+                    }"
+                  >
+                    {{ row.status }}
+                  </span>
+                </td>
+              </tr>
+
+              <!-- Duplicate rows for seamless scroll -->
+              <tr *ngFor="let row of expiringList">
+                <td>{{ row.appNo }}</td>
+                <td>{{ row.san }}</td>
+                <td>{{ row.fromDate | date: "dd/MM/yyyy" }}</td>
+                <td>{{ row.uptoDate | date: "dd/MM/yyyy" }}</td>
+                <td>{{ row.remainingDays }}</td>
+                <td>
+                  <span
+                    class="badge"
+                    [ngClass]="{
+                      'bg-warning text-dark': row.status === 'Warning',
+                      'bg-danger': row.status === 'Overdue',
+                    }"
+                  >
+                    {{ row.status }}
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- 📊 CHART 2 -->
+    <div class="col-md-6 col-sm-12">
+      <div class="chart-box">
+        <h6 class="text-center">⚓ Shed Occupancy Overview</h6>
+        <div class="table-responsive auto-scroll-table">
+          <table class="table table-sm table-striped table-bordered mb-0">
+            <thead class="table-success">
+              <tr>
+                <th>Shed Name</th>
+                <th>Total Area</th>
+                <th>Occupied</th>
+                <th>Hold</th>
+                <th>Vacant</th>
+                <th>Occupied %</th>
+                <th>Vacant %</th>
+              </tr>
+            </thead>
+
+            <!-- ⭐ SAME auto-scroll class used -->
+            <tbody class="scroll-content scroll-2">
+              <!-- Normal rows -->
+              <tr *ngFor="let shed of sheds">
+                <td>{{ shed.shedYardName }}</td>
+                <td>{{ shed.totalArea }}</td>
+
+                <td
+                  [ngStyle]="{
+                    'background-color':
+                      'rgba(255,0,0,' + shed.occupiedPercent / 100 + ')',
+                  }"
+                >
+                  {{ shed.occupiedArea }}
+                </td>
+                <td
+                  [ngStyle]="{
+                    'background-color':
+                      'rgba(100,100,100,' + shed.holdPercent / 100 + ')',
+                  }"
+                >
+                  {{ shed.holdArea }}
+                </td>
+                <td
+                  [ngStyle]="{
+                    'background-color':
+                      'rgba(0,255,0,' + shed.vacantPercent / 100 + ')',
+                  }"
+                >
+                  {{ shed.vacantArea }}
+                </td>
+
+                <td>
+                  <div class="progress">
+                    <div
+                      class="progress-bar bg-danger"
+                      role="progressbar"
+                      [style.width.%]="shed.occupiedPercent"
+                    >
+                      {{ shed.occupiedPercent }}%
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="progress">
+                    <div
+                      class="progress-bar bg-success"
+                      role="progressbar"
+                      [style.width.%]="shed.vacantPercent"
+                    >
+                      {{ shed.vacantPercent }}%
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- ⭐ Duplicate rows for continuous auto-scroll -->
+              <tr *ngFor="let shed of sheds">
+                <td>{{ shed.shedYardName }}</td>
+                <td>{{ shed.totalArea }}</td>
+
+                <td
+                  [ngStyle]="{
+                    'background-color':
+                      'rgba(255,0,0,' + shed.occupiedPercent / 100 + ')',
+                  }"
+                >
+                  {{ shed.occupiedArea }}
+                </td>
+                <td
+                  [ngStyle]="{
+                    'background-color':
+                      'rgba(100,100,100,' + shed.holdPercent / 100 + ')',
+                  }"
+                >
+                  {{ shed.holdArea }}
+                </td>
+                <td
+                  [ngStyle]="{
+                    'background-color':
+                      'rgba(0,255,0,' + shed.vacantPercent / 100 + ')',
+                  }"
+                >
+                  {{ shed.vacantArea }}
+                </td>
+
+                <td>
+                  <div class="progress">
+                    <div
+                      class="progress-bar bg-danger"
+                      role="progressbar"
+                      [style.width.%]="shed.occupiedPercent"
+                    >
+                      {{ shed.occupiedPercent }}%
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="progress">
+                    <div
+                      class="progress-bar bg-success"
+                      role="progressbar"
+                      [style.width.%]="shed.vacantPercent"
+                    >
+                      {{ shed.vacantPercent }}%
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!--Chart 3-->
+    <!-- ================ ROW 2 (Three Components) ================= -->
+    <div class="col-md-6 col-sm-12">
+      <div class="chart-box" style="height: 350px">
+        <h6 class="text-center">📊 Total Allotments (Monthly)</h6>
+
+        <div class="row mb-2 align-items-end">
+          <div class="col-auto">
+            <label class="form-label mb-0">From Month</label>
+            <input
+              type="month"
+              class="form-control form-control-sm text-primary"
+              [(ngModel)]="fromMonth"
+            />
+          </div>
+
+          <div class="col-auto">
+            <label class="form-label mb-0">To Month</label>
+            <input
+              type="month"
+              class="form-control form-control-sm text-primary"
+              [(ngModel)]="toMonth"
+            />
+          </div>
+
+          <div class="col-auto">
+            <button class="btn btn-success btn-sm" (click)="filterAllotments()">
+              <i class="bi bi-search"></i> Show Data
+            </button>
+          </div>
+        </div>
+
+        <div style="height: 250px">
+          <canvas #allotmentChart></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Small Pie Chart 1 -->
+    <div class="col-md-3 col-sm-6">
+      <div class="chart-box small-card">
+        <h6 class="text-center">
+          {{
+            showAppliedDetailChart
+              ? "📊 Applied Applications Status"
+              : "📈 Application Summary"
+          }}
+        </h6>
+
+        <div class="pie-chart-wrapper">
+          <!-- MAIN PIE -->
+          <canvas #applicationPieChart *ngIf="!showAppliedDetailChart"></canvas>
+
+          <!-- DETAIL PIE -->
+          <div
+            *ngIf="showAppliedDetailChart"
+            (mouseleave)="onDetailMouseLeave()"
+          >
+            <canvas #appliedDetailPieChart></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Small Pie Chart 2 -->
+    <div class="col-md-3 col-sm-6">
+      <div class="chart-box small-card">
+        <h6 class="text-center">
+          <i class="bi bi-currency-rupee" style="color: rgb(14, 216, 75)"></i>
+          Party Balance Summary
+        </h6>
+        <div class="pie-chart-wrapper">
+          <canvas #shedPieChart></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
